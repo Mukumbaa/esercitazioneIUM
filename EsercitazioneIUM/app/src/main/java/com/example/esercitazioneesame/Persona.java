@@ -14,6 +14,7 @@ public class Persona implements Serializable {
     private String password;
     private String dataNascita;
     private Boolean esistenza;
+    private int ID;
     /*
     private static Persona[] persone = {
             new Persona("Gabriele","Lippolis","password","06-12-2002",true),
@@ -33,6 +34,7 @@ public class Persona implements Serializable {
 
     public Persona(){
        this.esistenza = true;
+       this.ID = getID();
     };
 
     public Persona(String nome, String cognome, String password, String dataNascita, Boolean esistenza){
@@ -41,6 +43,7 @@ public class Persona implements Serializable {
         this.password = password;
         this.dataNascita = dataNascita;
         this.esistenza = esistenza;
+        this.ID = getID();
     }
     public String getNome(){
         return this.nome;
@@ -94,7 +97,21 @@ public class Persona implements Serializable {
     public void aggiungiUtente(){
         Persona.persone.add(this);
     }
-    public String getID(){
-        return this.getNome()+this.getCognome()+this.getDataNascita();
+    public int getID(){
+
+        if (this.ID != 0){
+            return this.ID;
+        }
+
+        String id = "";
+        char[] str = (this.getNome()+this.getCognome()+this.getDataNascita()).toCharArray();
+
+        for (char c:str) {
+            id += (int)c;
+        }
+        id = id.substring(this.getNome().length(),this.getNome().length()+3) + id.substring(this.getCognome().length(),this.getCognome().length()+3) + id.substring(this.getDataNascita().length(),this.getDataNascita().length()+2);
+
+        this.ID = Integer.parseInt(id);
+        return Integer.parseInt(id);
     }
 }

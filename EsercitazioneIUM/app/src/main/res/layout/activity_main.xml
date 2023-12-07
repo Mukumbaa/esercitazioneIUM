@@ -153,6 +153,7 @@
             android:backgroundTint="@color/primary"
             android:textAlignment="center"
             android:gravity="center"
+            android:textColor="@color/text"
             android:layout_gravity="center"
             android:textSize="26sp">
 
@@ -167,6 +168,7 @@
             android:layout_height="wrap_content"
             android:text="@string/non_hai_un_account"
             android:textAlignment="center"
+            android:textColor="@color/text"
             android:gravity="center"
             android:layout_gravity="center"
             android:backgroundTint="@color/secondary"

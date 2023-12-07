@@ -3,7 +3,10 @@
     <style name="Base.Theme.EsercitazioneEsame" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@color/background</item>
     </style>
-
     <style name="Theme.EsercitazioneEsame" parent="Base.Theme.EsercitazioneEsame" />
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/accent</item>
+    </style>
 </resources>

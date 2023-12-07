@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ public class HomeActivity extends AppCompatActivity {
     LibrettoFragment librettoFragment = new LibrettoFragment();
     StatisticheFragment statisticheFragment = new StatisticheFragment();
 
+    private TextView nomeUtente;
 
 
     @Override
@@ -28,6 +30,7 @@ public class HomeActivity extends AppCompatActivity {
 
         Intent precedenteIntent = getIntent();
         Persona utente = (Persona) precedenteIntent.getSerializableExtra("utente");
+        HomeFragment.addUtente(utente);
 
         bottomNavigationView = findViewById(R.id.bottomNavigation);
 
@@ -50,19 +53,7 @@ public class HomeActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.conteiner, statisticheFragment).commit();
                     return true;
                 }
-/*
-                switch (itemId) {
-                    case R.id.home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.conteiner, homeFragment).commit();
-                        return true;
-                    case R.id.libretto:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.conteiner, librettoFragment).commit();
-                        return true;
-                    case R.id.statistiche:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.conteiner, statisticheFragment).commit();
-                        return true;
-                }
-*/
+
                 return false;
             }
         });

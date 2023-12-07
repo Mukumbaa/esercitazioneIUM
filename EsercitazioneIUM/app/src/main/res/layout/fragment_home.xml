@@ -4,15 +4,80 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeFragment"
-    android:background="@color/background">
+    android:background="@color/background"
+    >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/homebackground"
+        />
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:background="@drawable/baseline_circle_24"
+        android:backgroundTint="@color/accent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="195dp"
+        />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/baseline_account_circle_24"
+        android:backgroundTint="@color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Profilo"
+        android:textColor="@color/text"
+        android:textSize="30sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home fragment"
         android:textColor="@color/text"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"
+        android:textSize="25sp"
+        android:id="@+id/nomeUtente"
+        android:layout_marginTop="485dp"
+        android:layout_marginStart="30dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text"
+        android:textSize="25sp"
+        android:id="@+id/cognomeUtente"
+        android:layout_marginTop="530dp"
+        android:layout_marginStart="30dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text"
+        android:textSize="25sp"
+        android:id="@+id/dataNascitaUtente"
+        android:layout_marginTop="575dp"
+        android:layout_marginStart="30dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text"
+        android:textSize="25sp"
+        android:id="@+id/idUtente"
+        android:layout_marginTop="620dp"
+        android:layout_marginStart="30dp"
         />
 
 </RelativeLayout>

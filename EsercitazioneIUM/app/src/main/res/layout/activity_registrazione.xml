@@ -162,7 +162,9 @@
             android:textAlignment="center"
             android:gravity="center"
             android:layout_gravity="center"
-            android:textSize="26sp">
+            android:textSize="26sp"
+            android:textColor="@color/text"
+            >
 
         </Button>
         <Space
@@ -178,7 +180,9 @@
             android:gravity="center"
             android:layout_gravity="center"
             android:backgroundTint="@color/secondary"
-            android:textSize="26sp">
+            android:textSize="26sp"
+            android:textColor="@color/text"
+            >
         </Button>
 
 
