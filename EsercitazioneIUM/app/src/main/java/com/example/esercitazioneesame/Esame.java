@@ -16,4 +16,25 @@ public class Esame {
         this.cfu = cfu;
     }
 
+    int getVoto(){
+        return this.voto;
+    }
+    int getCfu(){
+        return this.cfu;
+    }
+    String getNomeEsame(){
+        return this.nomeEsame;
+    }
+    void setVoto(int voto){
+        this.voto = voto;
+    }
+    void setCfu(int cfu){
+        this.cfu = cfu;
+    }
+    void setNomeEsame(String nomeEsame){
+        this.nomeEsame = nomeEsame;
+    }
+
+
+
 }

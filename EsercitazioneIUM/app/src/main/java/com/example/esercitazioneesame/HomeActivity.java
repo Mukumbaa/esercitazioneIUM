@@ -1,15 +1,24 @@
 package com.example.esercitazioneesame;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 public class HomeActivity extends AppCompatActivity {
 
 
-    private TextView sium;
+    BottomNavigationView bottomNavigationView;
+    HomeFragment homeFragment = new HomeFragment();
+    LibrettoFragment librettoFragment = new LibrettoFragment();
+    StatisticheFragment statisticheFragment = new StatisticheFragment();
+
 
 
     @Override
@@ -20,8 +29,43 @@ public class HomeActivity extends AppCompatActivity {
         Intent precedenteIntent = getIntent();
         Persona utente = (Persona) precedenteIntent.getSerializableExtra("utente");
 
-        sium = findViewById(R.id.sium);
-        sium.setText(utente.getNome());
+        bottomNavigationView = findViewById(R.id.bottomNavigation);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.conteiner,homeFragment).commit();
+
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                int itemId = item.getItemId();
+
+                if (itemId == R.id.home){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.conteiner, homeFragment).commit();
+                    return true;
+                }
+                if(itemId == R.id.libretto){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.conteiner, librettoFragment).commit();
+                    return true;
+                }
+                if(itemId == R.id.statistiche){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.conteiner, statisticheFragment).commit();
+                    return true;
+                }
+/*
+                switch (itemId) {
+                    case R.id.home:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.conteiner, homeFragment).commit();
+                        return true;
+                    case R.id.libretto:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.conteiner, librettoFragment).commit();
+                        return true;
+                    case R.id.statistiche:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.conteiner, statisticheFragment).commit();
+                        return true;
+                }
+*/
+                return false;
+            }
+        });
 
     }
 

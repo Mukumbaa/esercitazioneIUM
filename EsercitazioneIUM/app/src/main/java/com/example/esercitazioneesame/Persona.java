@@ -94,7 +94,7 @@ public class Persona implements Serializable {
     public void aggiungiUtente(){
         Persona.persone.add(this);
     }
-    public String creaID(){
+    public String getID(){
         return this.getNome()+this.getCognome()+this.getDataNascita();
     }
 }
