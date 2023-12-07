@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistrazioneActivity"
+    android:orientation="vertical"
+    android:background="@color/background"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="46dp">
+        </Space>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:textSize="36sp"
+            android:textColor="@color/text"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+        </Space>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nome"
+            android:textColor="@color/text"
+            android:textSize="26sp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:textColor="@color/text"
+
+            android:id="@+id/editTextNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:hint="@string/mario"
+            android:textColorHint="@color/hint"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp">
+        </Space>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cognome"
+            android:textSize="26sp"
+            android:textColor="@color/text"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <EditText
+            android:textColor="@color/text"
+
+            android:id="@+id/editTextCognome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:hint="@string/rossi"
+            android:textColorHint="@color/hint"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp">
+        </Space>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/data_di_nascita"
+            android:textColor="@color/text"
+            android:textSize="26sp"
+
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:textColor="@color/text"
+
+            android:layout_width="match_parent"
+            android:id="@+id/editTextDataNascita"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:hint="@string/_02_12_2002"
+            android:textColorHint="@color/hint"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp">
+        </Space>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/passoword"
+            android:textSize="26sp"
+            android:textColor="@color/text"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:textColor="@color/text"
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:hint="@string/_123456"
+            android:textColorHint="@color/hint"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+        </Space>
+        <Button
+            android:id="@+id/buttonRegistrati"
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:text="@string/registrati"
+            android:backgroundTint="@color/primary"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="26sp">
+
+        </Button>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp">
+        </Space>
+        <Button
+            android:id="@+id/buttonTornaAlLogin"
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:text="@string/torna_al_login"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/secondary"
+            android:textSize="26sp">
+        </Button>
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>

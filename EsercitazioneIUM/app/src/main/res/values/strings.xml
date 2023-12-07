@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">EsercitazioneEsame</string>
+    <string name="login">Login</string>
+    <string name="nome">Nome</string>
+    <string name="cognome">Cognome</string>
+    <string name="data_di_nascita">Data di nascita</string>
+    <string name="passoword">Passoword</string>
+    <string name="non_hai_un_account">Non hai un Account?</string>
+    <string name="mario">Mario</string>
+    <string name="rossi">Rossi</string>
+    <string name="_123456">123456</string>
+    <string name="_02_12_2002">02–12–2002</string>
+    <string name="registrati">Registrati</string>
+    <string name="torna_al_login">Torna al Login</string>
+    <string name="registrazione_avvenuta_con_successo">Registrazione avvenuta con successo</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>
