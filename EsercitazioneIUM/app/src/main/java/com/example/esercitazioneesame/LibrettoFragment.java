@@ -8,9 +8,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 
 public class LibrettoFragment extends Fragment {
@@ -18,6 +21,10 @@ public class LibrettoFragment extends Fragment {
     private TextView textViewMsg;
     private Button aggiungiEsame;
     private ListView librettoLista;
+
+    ArrayList<Esame> esami;
+    ArrayAdapter<Esame> adapter;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +38,18 @@ public class LibrettoFragment extends Fragment {
         textViewMsg = view.findViewById(R.id.textViewMsg);
         librettoLista = view.findViewById(R.id.librettoLista);
 
+
+
         if (utente.getLibretto().size() == 0){
             textViewMsg.setText("Nessun voto registrato");
+        }else{
+            textViewMsg.setText("Libretto esami");
         }
+        ListView librettoLista = view.findViewById(R.id.librettoLista);
+        esami = utente.getLibretto();
+        // Aggiungi altri esami secondo necessità
+        CustomAdapter adapter = new CustomAdapter(getContext(), esami);
+        librettoLista.setAdapter(adapter);
 
         aggiungiEsame.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +60,12 @@ public class LibrettoFragment extends Fragment {
                 getActivity().finish();
             }
         });
+
+
+
+
+
+
         return view;
     }
     public static void addUtente(Persona utente) {
