@@ -32,11 +32,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 utente = inviaDati();
                 if (utente.getEsistenza()){
-                    Toast.makeText(MainActivity.this,"utente esistente",Toast.LENGTH_SHORT).show();
-
                     Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                    intent.putExtra("NomeUtente",utente.getNome());
+                    //intent.putExtra("NomeUtente",utente.getNome());
                     intent.putExtra("utente",utente);
+                    intent.putExtra("fragment","home");
                     startActivity(intent);
                     finish();
                 }else{
@@ -58,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
                         editTextPassword.clearFocus();
                         editTextPassword.setText("");
                     }
-                    Toast.makeText(MainActivity.this,"utente non esistente",Toast.LENGTH_SHORT).show();
                 }
 
             }

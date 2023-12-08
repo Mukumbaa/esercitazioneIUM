@@ -14,12 +14,12 @@
         />
 
     <ImageView
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="165dp"
+        android:layout_height="165dp"
         android:background="@drawable/baseline_circle_24"
         android:backgroundTint="@color/accent"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="195dp"
+        android:layout_marginTop="193dp"
         />
 
     <ImageView

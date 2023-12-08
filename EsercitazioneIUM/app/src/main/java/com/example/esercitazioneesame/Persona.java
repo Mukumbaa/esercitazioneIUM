@@ -2,6 +2,8 @@ package com.example.esercitazioneesame;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.ArrayList;
 
@@ -15,6 +17,8 @@ public class Persona implements Serializable {
     private String dataNascita;
     private Boolean esistenza;
     private int ID;
+    private static ArrayList<Esame> libretto = new ArrayList<>();
+
     /*
     private static Persona[] persone = {
             new Persona("Gabriele","Lippolis","password","06-12-2002",true),
@@ -113,5 +117,11 @@ public class Persona implements Serializable {
 
         this.ID = Integer.parseInt(id);
         return Integer.parseInt(id);
+    }
+    public void addEsame(Esame e){
+        libretto.add(e);
+    }
+    public ArrayList<Esame> getLibretto(){
+        return libretto;
     }
 }

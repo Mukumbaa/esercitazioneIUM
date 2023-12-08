@@ -31,10 +31,23 @@ public class HomeActivity extends AppCompatActivity {
         Intent precedenteIntent = getIntent();
         Persona utente = (Persona) precedenteIntent.getSerializableExtra("utente");
         HomeFragment.addUtente(utente);
+        LibrettoFragment.addUtente(utente);
 
         bottomNavigationView = findViewById(R.id.bottomNavigation);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.conteiner,homeFragment).commit();
+        //getSupportFragmentManager().beginTransaction().replace(R.id.conteiner,homeFragment).commit();
+
+        if(precedenteIntent.getStringExtra("fragment").equals("libretto")){
+            bottomNavigationView.setSelectedItemId(R.id.libretto);
+            getSupportFragmentManager().beginTransaction().replace(R.id.conteiner,librettoFragment).commit();
+        }else if(precedenteIntent.getStringExtra("fragment").equals("statistiche")){
+            bottomNavigationView.setSelectedItemId(R.id.statistiche);
+            getSupportFragmentManager().beginTransaction().replace(R.id.conteiner,statisticheFragment).commit();
+        }else{
+            bottomNavigationView.setSelectedItemId(R.id.home);
+            getSupportFragmentManager().beginTransaction().replace(R.id.conteiner,homeFragment).commit();
+        }
+
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
