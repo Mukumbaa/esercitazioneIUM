@@ -32,6 +32,7 @@ public class HomeActivity extends AppCompatActivity {
         Persona utente = (Persona) precedenteIntent.getSerializableExtra("utente");
         HomeFragment.addUtente(utente);
         LibrettoFragment.addUtente(utente);
+        StatisticheFragment.addUtente(utente);
 
         bottomNavigationView = findViewById(R.id.bottomNavigation);
 

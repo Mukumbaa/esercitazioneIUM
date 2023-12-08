@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 public class StatisticheFragment extends Fragment {
 
+    private static Persona utente;
 
 
     @Override
@@ -18,5 +19,8 @@ public class StatisticheFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_statistiche, container, false);
+    }
+    public static void addUtente(Persona utente) {
+        StatisticheFragment.utente = utente;
     }
 }

@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 
@@ -16,6 +17,7 @@ public class LibrettoFragment extends Fragment {
     private static Persona utente;
     private TextView textViewMsg;
     private Button aggiungiEsame;
+    private ListView librettoLista;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +29,7 @@ public class LibrettoFragment extends Fragment {
 
         aggiungiEsame = view.findViewById(R.id.aggiungiEsame);
         textViewMsg = view.findViewById(R.id.textViewMsg);
+        librettoLista = view.findViewById(R.id.librettoLista);
 
         if (utente.getLibretto().size() == 0){
             textViewMsg.setText("Nessun voto registrato");
@@ -46,5 +49,6 @@ public class LibrettoFragment extends Fragment {
     public static void addUtente(Persona utente) {
         LibrettoFragment.utente = utente;
     }
+
 
 }
