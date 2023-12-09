@@ -124,4 +124,16 @@ public class Persona implements Serializable {
     public ArrayList<Esame> getLibretto(){
         return libretto;
     }
+    public void eliminaEsame(Esame e){
+        for (Esame es:
+             libretto) {
+            if(e.getVoto() == es.getVoto() && e.getCfu() == es.getCfu() && e.getNomeEsame().equals(es.getNomeEsame())){
+                libretto.remove(es);
+                return;
+            }
+        }
+    }
+    public void eliminaEsame(int pos){
+        Persona.libretto.remove(pos);
+    }
 }

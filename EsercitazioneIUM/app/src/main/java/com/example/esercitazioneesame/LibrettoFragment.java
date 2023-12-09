@@ -8,10 +8,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -21,7 +24,7 @@ public class LibrettoFragment extends Fragment {
     private TextView textViewMsg;
     private Button aggiungiEsame;
     private ListView librettoLista;
-
+    private ImageButton buttonDelete;
     ArrayList<Esame> esami;
     ArrayAdapter<Esame> adapter;
 
@@ -36,19 +39,25 @@ public class LibrettoFragment extends Fragment {
 
         aggiungiEsame = view.findViewById(R.id.aggiungiEsame);
         textViewMsg = view.findViewById(R.id.textViewMsg);
-        librettoLista = view.findViewById(R.id.librettoLista);
-
-
 
         if (utente.getLibretto().size() == 0){
             textViewMsg.setText("Nessun voto registrato");
         }else{
             textViewMsg.setText("Libretto esami");
         }
-        ListView librettoLista = view.findViewById(R.id.librettoLista);
+        librettoLista = view.findViewById(R.id.librettoLista);
         esami = utente.getLibretto();
+
+        librettoLista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getContext(),"sium",Toast.LENGTH_LONG);
+            }
+        });
+
         // Aggiungi altri esami secondo necessità
-        CustomAdapter adapter = new CustomAdapter(getContext(), esami);
+        CustomAdapter adapter = new CustomAdapter(getContext(), esami,utente);
+        adapter.setUtente(utente);
         librettoLista.setAdapter(adapter);
 
         aggiungiEsame.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +69,10 @@ public class LibrettoFragment extends Fragment {
                 getActivity().finish();
             }
         });
+
+
+
+
 
 
 

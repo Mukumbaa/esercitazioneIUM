@@ -1,16 +1,18 @@
 <!-- list_item.xml -->
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/background"
+    >
 
     <TextView
         android:id="@+id/textViewNomeEsame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:textSize="20sp"
+        android:text="Analisi 1"
         android:textColor="@color/text"
         android:textStyle="bold"/>
 
@@ -18,13 +20,66 @@
         android:id="@+id/textViewVoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/textViewNomeEsame"
+        android:text="30"
         android:textColor="@color/text"
-        android:textSize="16sp"/>
-
+        android:textSize="30sp"/>
     <TextView
         android:id="@+id/textViewCfu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/textViewVoto"
         android:textColor="@color/text"
+        android:text="9 CFU"
         android:textSize="16sp"/>
-</LinearLayout>
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/textViewVoto"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-49dp"
+        android:layout_marginEnd="80dp"
+        android:id="@+id/buttonModifica"
+        android:backgroundTint="@color/primary"
+        android:foreground="@drawable/baseline_edit_24"
+        />
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/textViewVoto"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="-49dp"
+        android:layout_marginEnd="5dp"
+        android:id="@+id/buttonElimina"
+        android:backgroundTint="@color/errore"
+        android:foreground="@drawable/baseline_delete_24"/>
+<!--
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/textViewVoto"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-49dp"
+        android:layout_marginEnd="80dp"
+        android:backgroundTint="@color/primary"
+        android:foreground="@drawable/baseline_edit_24" />
+
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/textViewVoto"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="-49dp"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="@color/errore"
+        android:foreground="@drawable/baseline_delete_24" />
+-->
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@id/textViewCfu"
+        />
+</RelativeLayout>

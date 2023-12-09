@@ -18,6 +18,8 @@
             android:text=""
             android:textAlignment="center"
             android:textColor="@color/text"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:textSize="30sp"
             />
 
@@ -26,8 +28,19 @@
             android:layout_height="wrap_content"
             android:id="@+id/librettoLista"
             android:layout_below="@+id/textViewMsg"
+            android:layout_above="@+id/aggiungiEsame"
             />
+        <Button
+            android:id="@+id/aggiungiEsame"
+            android:layout_width="230dp"
+            android:layout_height="50dp"
+            android:text="Aggiungi esame"
+            android:textSize="20sp"
+            android:drawableEnd="@drawable/baseline_add_24"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
 
+            />
     </RelativeLayout>
 
 
@@ -40,7 +53,7 @@
 
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"/>
-        -->
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,4 +70,5 @@
             android:drawableEnd="@drawable/baseline_add_24"
         />
     </LinearLayout>
+    -->
 </FrameLayout>

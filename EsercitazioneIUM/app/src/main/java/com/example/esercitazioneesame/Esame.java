@@ -1,10 +1,11 @@
 package com.example.esercitazioneesame;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Esame {
+public class Esame implements Serializable {
     private int voto;
     private String nomeEsame;
     private int cfu;
