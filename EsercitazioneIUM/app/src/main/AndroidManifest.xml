@@ -13,6 +13,9 @@
         android:theme="@style/Theme.EsercitazioneEsame"
         tools:targetApi="31">
         <activity
+            android:name=".ModificaEsameActivity"
+            android:exported="false" />
+        <activity
             android:name=".EliminazioneEsameActivity"
             android:exported="false" />
         <activity

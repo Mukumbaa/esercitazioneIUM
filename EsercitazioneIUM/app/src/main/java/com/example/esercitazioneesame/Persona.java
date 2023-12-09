@@ -1,5 +1,7 @@
 package com.example.esercitazioneesame;
 
+import android.util.Log;
+
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -134,6 +136,11 @@ public class Persona implements Serializable {
         }
     }
     public void eliminaEsame(int pos){
-        Persona.libretto.remove(pos);
+        libretto.remove(pos);
+    }
+    public void modificaEsame(Esame e, int posizione){
+        Log.d("SIUM",e.getNomeEsame()+String.valueOf(posizione));
+        libretto.set(posizione,e);
+        Log.d("SIUM",":"+libretto.get(posizione).getNomeEsame());
     }
 }

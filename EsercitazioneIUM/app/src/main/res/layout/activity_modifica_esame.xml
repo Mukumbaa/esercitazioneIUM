@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistrazioneActivity"
+    android:orientation="vertical"
+    android:background="@color/background"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+
+        <TextView
+            android:id="@+id/messaggio"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:textSize="26sp"
+            android:text="Modificare il seguente esame?"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="35dp">
+        </Space>
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome esame"
+            android:textColor="@color/text"
+            android:textSize="26sp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:textColor="@color/text"
+            android:id="@+id/editTextNomeEsameM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+
+            android:textColorHint="@color/hint"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp">
+        </Space>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Voto"
+            android:textSize="26sp"
+            android:textColor="@color/text"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <EditText
+            android:textColor="@color/text"
+
+            android:id="@+id/editTextVotoM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+
+            android:textColorHint="@color/hint"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp">
+        </Space>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CFU"
+            android:textSize="26sp"
+            android:textColor="@color/text"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:textColor="@color/text"
+            android:id="@+id/editTextCfuM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+
+            android:textColorHint="@color/hint"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+        </Space>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp">
+        </Space>
+        <Button
+            android:id="@+id/buttonConfermaModifica"
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:text="Modifica"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/primary"
+            android:textColor="@color/text"
+            android:textSize="26sp">
+        </Button>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp">
+        </Space>
+        <Button
+            android:id="@+id/buttonTornaIndietroM"
+            android:layout_width="225dp"
+            android:layout_height="wrap_content"
+            android:text="Indietro"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/secondary"
+            android:textColor="@color/text"
+            android:textSize="26sp">
+        </Button>
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>

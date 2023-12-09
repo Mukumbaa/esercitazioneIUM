@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,6 +55,8 @@ public class CustomAdapter extends BaseAdapter {
         TextView textViewVoto = convertView.findViewById(R.id.textViewVoto);
         TextView textViewCfu = convertView.findViewById(R.id.textViewCfu);
         ImageButton buttonElimina = convertView.findViewById(R.id.buttonElimina);
+        ImageButton buttonModifica = convertView.findViewById(R.id.buttonModifica);
+
 
 
 
@@ -76,6 +79,22 @@ public class CustomAdapter extends BaseAdapter {
                 intent.putExtra("posizione",position);
 
 
+                context.startActivity(intent);
+
+                // Chiude l'Activity corrente
+                ((Activity) context).finish();
+            }
+        });
+
+        buttonModifica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ModificaEsameActivity.class);
+
+                intent.putExtra("utente",utente);
+                intent.putExtra("esame", esame);
+                intent.putExtra("posizione",position);
+                Log.d("SIUM","ciao");
                 context.startActivity(intent);
 
                 // Chiude l'Activity corrente
