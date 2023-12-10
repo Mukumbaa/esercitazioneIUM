@@ -34,49 +34,80 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 utente = inviaDati();
-                if (utente.getEsistenza()){
-                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                    //intent.putExtra("NomeUtente",utente.getNome());
-                    if (utente.getNome().equals("Gabriele")){
-                        utente.setLibretto(new ArrayList<>(Arrays.asList(
-                                new Esame(30,"Analisi 1",9),
-                                new Esame(26,"Programmazione 1",12),
-                                new Esame(18,"ALF",6),
-                                new Esame(21,"EDI",6),
-                                new Esame(30,"Calcolo e metodo scientifico",9),
-                                new Esame(30,"nome lunghissimissimissimo incredibile gigante",9),
-                                new Esame(30,"Analisi 1",9),
-                                new Esame(26,"Programmazione 1",12),
-                                new Esame(18,"ALF",6),
-                                new Esame(21,"EDI",6),
-                                new Esame(30,"Calcolo e metodo scientifico",9)
+                String nome = editTextNome.getText().toString();
+                String cognome = editTextCognome.getText().toString();
+                String password = editTextPassword.getText().toString();
 
-                        )));
-                    }
-                    intent.putExtra("utente",utente);
-                    intent.putExtra("fragment","home");
-                    startActivity(intent);
-                    finish();
-                }else{
-                    if(utente.getNome().equals("null")){
-                        editTextNome.setHint("Nome errato");
-                        editTextNome.setHintTextColor(getResources().getColor(R.color.errore));
-                        editTextNome.clearFocus();
-                        editTextNome.setText("");
-                    }
-                    if(utente.getCognome().equals("null")){
-                        editTextCognome.setHint("Cognome errato");
-                        editTextCognome.setHintTextColor(getResources().getColor(R.color.errore));
-                        editTextCognome.clearFocus();
-                        editTextCognome.setText("");
-                    }
-                    if(utente.getPassword().equals("null")){
-                        editTextPassword.setHint("Password errata");
-                        editTextPassword.setHintTextColor(getResources().getColor(R.color.errore));
-                        editTextPassword.clearFocus();
-                        editTextPassword.setText("");
+                boolean emptyFlag = false;
+
+                if(nome.equals("")){
+                    editTextNome.setHint("Insierire Nome");
+                    editTextNome.setHintTextColor(getResources().getColor(R.color.errore));
+                    editTextNome.clearFocus();
+                    editTextNome.setText("");
+                    emptyFlag = true;
+                }
+                if(cognome.equals("")){
+                    editTextCognome.setHint("Inserire Cognome");
+                    editTextCognome.setHintTextColor(getResources().getColor(R.color.errore));
+                    editTextCognome.clearFocus();
+                    editTextCognome.setText("");
+                    emptyFlag = true;
+                }
+                if(password.equals("")){
+                    editTextPassword.setHint("Inserire Password");
+                    editTextPassword.setHintTextColor(getResources().getColor(R.color.errore));
+                    editTextPassword.clearFocus();
+                    editTextPassword.setText("");
+                    emptyFlag = true;
+                }
+
+                if (!emptyFlag){
+                    if (utente.getEsistenza()){
+                        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                        //intent.putExtra("NomeUtente",utente.getNome());
+                        if (utente.getNome().equals("Gabriele")){
+                            utente.setLibretto(new ArrayList<>(Arrays.asList(
+                                    new Esame(30,"Analisi 1",9),
+                                    new Esame(26,"Programmazione 1",12),
+                                    new Esame(18,"ALF",6),
+                                    new Esame(21,"EDI",6),
+                                    new Esame(30,"Calcolo e metodo scientifico",9),
+                                    new Esame(30,"nome lunghissimissimissimo incredibile gigante",9),
+                                    new Esame(30,"Analisi 1",9),
+                                    new Esame(26,"Programmazione 1",12),
+                                    new Esame(18,"ALF",6),
+                                    new Esame(21,"EDI",6),
+                                    new Esame(30,"Calcolo e metodo scientifico",9)
+
+                            )));
+                        }
+                        intent.putExtra("utente",utente);
+                        intent.putExtra("fragment","home");
+                        startActivity(intent);
+                        finish();
+                    }else{
+                        if(utente.getNome().equals("null")){
+                            editTextNome.setHint("Nome errato");
+                            editTextNome.setHintTextColor(getResources().getColor(R.color.errore));
+                            editTextNome.clearFocus();
+                            editTextNome.setText("");
+                        }
+                        if(utente.getCognome().equals("null")){
+                            editTextCognome.setHint("Cognome errato");
+                            editTextCognome.setHintTextColor(getResources().getColor(R.color.errore));
+                            editTextCognome.clearFocus();
+                            editTextCognome.setText("");
+                        }
+                        if(utente.getPassword().equals("null")){
+                            editTextPassword.setHint("Password errata");
+                            editTextPassword.setHintTextColor(getResources().getColor(R.color.errore));
+                            editTextPassword.clearFocus();
+                            editTextPassword.setText("");
+                        }
                     }
                 }
+
 
             }
         });
@@ -90,9 +121,21 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private Persona inviaDati() {
+
         String nome = editTextNome.getText().toString();
         String cognome = editTextCognome.getText().toString();
         String password = editTextPassword.getText().toString();
+
+        if(nome.equals("")){
+            nome="empty";
+        }
+        if(cognome.equals("")){
+            nome="empty";
+        }
+        if(password.equals("")){
+            nome="empty";
+        }
+
 
         return Persona.findPersona(nome,cognome,password);
     }

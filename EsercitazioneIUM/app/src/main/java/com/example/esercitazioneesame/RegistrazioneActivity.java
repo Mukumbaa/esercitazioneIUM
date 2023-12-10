@@ -38,20 +38,60 @@ public class RegistrazioneActivity extends AppCompatActivity {
         buttonRegistrati.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Persona utenteNuovo = new Persona(editTextNome.getText().toString(),editTextCognome.getText().toString(),editTextPassword.getText().toString(),editTextDataNascita.getText().toString(),true);
 
-                Intent intent = new Intent(RegistrazioneActivity.this, MessaggioFineRegistrazione.class);
+                String nome = editTextNome.getText().toString();
+                String cognome = editTextCognome.getText().toString();
+                String dataNascita = editTextDataNascita.getText().toString();
+                String password = editTextPassword.getText().toString();
 
-                if (utenteNuovo.checkUtenteEsistente()){
-                    intent.putExtra("messaggio","Utente già registrato");
-                }else{
-                    utenteNuovo.aggiungiUtente();
-                    intent.putExtra("messaggio","Registrazione avvenuta con successo");
+                boolean emptyFlag = false;
+
+                if(nome.equals("")){
+                    editTextNome.setHint("Insierire Nome");
+                    editTextNome.setHintTextColor(getResources().getColor(R.color.errore));
+                    editTextNome.clearFocus();
+                    editTextNome.setText("");
+                    emptyFlag = true;
                 }
-                intent.putExtra("NomeUtente",utenteNuovo.getNome());
-                intent.putExtra("CognomeUtente",utenteNuovo.getCognome());
-                startActivity(intent);
-                finish();
+                if(cognome.equals("")){
+                    editTextCognome.setHint("Inserire Cognome");
+                    editTextCognome.setHintTextColor(getResources().getColor(R.color.errore));
+                    editTextCognome.clearFocus();
+                    editTextCognome.setText("");
+                    emptyFlag = true;
+                }
+                if(password.equals("")){
+                    editTextDataNascita.setHint("Inserire Data di Nascita");
+                    editTextDataNascita.setHintTextColor(getResources().getColor(R.color.errore));
+                    editTextDataNascita.clearFocus();
+                    editTextDataNascita.setText("");
+                    emptyFlag = true;
+                }
+                if(password.equals("")){
+                    editTextPassword.setHint("Inserire Password");
+                    editTextPassword.setHintTextColor(getResources().getColor(R.color.errore));
+                    editTextPassword.clearFocus();
+                    editTextPassword.setText("");
+                    emptyFlag = true;
+                }
+
+                if(!emptyFlag){
+                    Persona utenteNuovo = new Persona(nome,cognome,password,dataNascita,true);
+
+                    Intent intent = new Intent(RegistrazioneActivity.this, MessaggioFineRegistrazione.class);
+
+                    if (utenteNuovo.checkUtenteEsistente()){
+                        intent.putExtra("messaggio","Utente già registrato");
+                    }else{
+                        utenteNuovo.aggiungiUtente();
+                        intent.putExtra("messaggio","Registrazione avvenuta con successo");
+                    }
+                    intent.putExtra("NomeUtente",utenteNuovo.getNome());
+                    intent.putExtra("CognomeUtente",utenteNuovo.getCognome());
+                    startActivity(intent);
+                    finish();
+                }
+
             }
         });
 

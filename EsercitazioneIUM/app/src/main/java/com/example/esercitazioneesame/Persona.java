@@ -36,15 +36,6 @@ public class Persona implements Serializable {
 //
 //    ));
 
-    /*
-    private static Persona[] persone = {
-            new Persona("Gabriele","Lippolis","password","06-12-2002",true),
-            new Persona("Edoardo","Lippolis","password","21-11-2012",true),
-            new Persona("Vito","Lippolis","password","10-02-1966",true),
-            new Persona("Silvia","Garau","password","08-12-1973",true)
-    };
-    */
-
     private static ArrayList<Persona> persone = new ArrayList<>(Arrays.asList(
             new Persona("Gabriele","Lippolis","password","06-12-2002",true),
             new Persona("Edoardo","Lippolis","password","21-11-2012",true),
@@ -120,6 +111,10 @@ public class Persona implements Serializable {
     }
     public int getID(){
 
+
+        //
+
+
         if (this.ID != 0){
             return this.ID;
         }
@@ -133,7 +128,7 @@ public class Persona implements Serializable {
         id = id.substring(this.getNome().length(),this.getNome().length()+3) + id.substring(this.getCognome().length(),this.getCognome().length()+3) + id.substring(this.getDataNascita().length(),this.getDataNascita().length()+2);
 
         this.ID = Integer.parseInt(id);
-        return Integer.parseInt(id);
+        return this.ID;
     }
     public void addEsame(Esame e){
         libretto.add(e);

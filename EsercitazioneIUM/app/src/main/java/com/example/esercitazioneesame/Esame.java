@@ -9,7 +9,6 @@ public class Esame implements Serializable {
     private int voto;
     private String nomeEsame;
     private int cfu;
-    private static Map<Integer, ArrayList<Esame>> libretto = new HashMap<>();
 
     public Esame(int voto,String nomeEsame,int cfu){
         this.voto = voto;
