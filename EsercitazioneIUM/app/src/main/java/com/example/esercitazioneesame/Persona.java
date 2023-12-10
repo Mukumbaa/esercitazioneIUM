@@ -19,7 +19,20 @@ public class Persona implements Serializable {
     private String dataNascita;
     private Boolean esistenza;
     private int ID;
-    private static ArrayList<Esame> libretto = new ArrayList<>();
+    private static ArrayList<Esame> libretto = new ArrayList<>(Arrays.asList(
+            new Esame(30,"Analisi 1",9),
+            new Esame(26,"Programmazione 1",12),
+            new Esame(18,"ALF",6),
+            new Esame(21,"EDI",6),
+            new Esame(30,"Calcolo e metodo scientifico",9),
+            new Esame(30,"nome lunghissimissimissimo incredibile gigante",9),
+            new Esame(30,"Analisi 1",9),
+            new Esame(26,"Programmazione 1",12),
+            new Esame(18,"ALF",6),
+            new Esame(21,"EDI",6),
+            new Esame(30,"Calcolo e metodo scientifico",9)
+
+    ));
 
     /*
     private static Persona[] persone = {
@@ -142,5 +155,34 @@ public class Persona implements Serializable {
         Log.d("SIUM",e.getNomeEsame()+String.valueOf(posizione));
         libretto.set(posizione,e);
         Log.d("SIUM",":"+libretto.get(posizione).getNomeEsame());
+    }
+    public double getMedia(){
+        double media = 0;
+        for (Esame e: libretto) {
+            media += e.getVoto();
+        }
+        media = media/libretto.size();
+
+        return (double) Math.round(media * 1000) / 1000;
+    }
+    public double getMediaPonderata(){
+        double media = 0;
+        int cfuu = 0;
+        for (Esame e: libretto) {
+            media += e.getVoto()*e.getCfu();
+            cfuu += e.getCfu();
+        }
+        media = media/cfuu;
+        return (double) Math.round(media * 1000) / 1000;
+    }
+    public double getVotoLaurea(){
+        double media = 0;
+        int cfuu = 0;
+        for (Esame e: libretto) {
+            media += e.getVoto()*e.getCfu();
+            cfuu += e.getCfu();
+        }
+        media = (media/cfuu)*110/30;
+        return (double) Math.round(media * 1000) / 1000;
     }
 }

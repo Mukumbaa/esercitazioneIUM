@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -64,8 +65,7 @@ public class CustomAdapter extends BaseAdapter {
         Esame esame = data.get(position);
         textViewNomeEsame.setText(esame.getNomeEsame());
         textViewVoto.setText(String.valueOf(esame.getVoto()));
-        textViewCfu.setText(esame.getCfu() +"CFU");
-
+        textViewCfu.setText(esame.getCfu() +" CFU");
 
         buttonElimina.setOnClickListener(new View.OnClickListener() {
             @Override

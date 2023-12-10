@@ -15,7 +15,17 @@
             android:id="@+id/textViewMsg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/text"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_centerVertical="true"
+            android:textSize="30sp"
+            />
+        <TextView
+            android:id="@+id/textViewLibretto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textColor="@color/text"
             android:layout_marginTop="5dp"
@@ -24,11 +34,14 @@
             />
 
         <ListView
+            android:id="@+id/librettoLista"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/librettoLista"
-            android:layout_below="@+id/textViewMsg"
             android:layout_above="@+id/aggiungiEsame"
+            android:layout_below="@+id/textViewLibretto"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+
             />
         <Button
             android:id="@+id/aggiungiEsame"

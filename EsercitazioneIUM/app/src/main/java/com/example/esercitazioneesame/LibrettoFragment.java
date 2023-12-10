@@ -22,6 +22,8 @@ import java.util.ArrayList;
 public class LibrettoFragment extends Fragment {
     private static Persona utente;
     private TextView textViewMsg;
+    private TextView textViewLibretto;
+
     private Button aggiungiEsame;
     private ListView librettoLista;
     private ImageButton buttonDelete;
@@ -39,13 +41,18 @@ public class LibrettoFragment extends Fragment {
 
         aggiungiEsame = view.findViewById(R.id.aggiungiEsame);
         textViewMsg = view.findViewById(R.id.textViewMsg);
+        textViewLibretto = view.findViewById(R.id.textViewLibretto);
 
         if (utente.getLibretto().size() == 0){
             textViewMsg.setText("Nessun voto registrato");
+            textViewLibretto.setVisibility(View.GONE);
         }else{
-            textViewMsg.setText("Libretto esami");
+            textViewLibretto.setText("Libretto esami");
+            textViewMsg.setVisibility(View.GONE);
         }
         librettoLista = view.findViewById(R.id.librettoLista);
+        librettoLista.setDivider(null);
+        librettoLista.setDividerHeight(50);
         esami = utente.getLibretto();
 
         librettoLista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
