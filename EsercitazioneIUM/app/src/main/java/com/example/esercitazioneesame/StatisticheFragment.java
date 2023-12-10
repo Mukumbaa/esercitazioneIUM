@@ -21,15 +21,29 @@ public class StatisticheFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_statistiche, container, false);
 
-
         textViewMsgS = view.findViewById(R.id.textViewMsgS);
         textViewMedia = view.findViewById(R.id.textViewMedia);
         textViewMediaPonderata = view.findViewById(R.id.textViewMediaPonderata);
         textViewVotoLaurea = view.findViewById(R.id.textViewVotoLaurea);
 
-        textViewMedia.setText("Hai una media di:\n"+ utente.getMedia());
-        textViewMediaPonderata.setText("Hai una media ponderata di:\n"+ utente.getMediaPonderata());
-        textViewVotoLaurea.setText("Il tuo voto di laurea previsto sarà di:\n"+ utente.getVotoLaurea());
+
+        if(utente.getLibretto().size() == 0){
+            textViewMsgS.setText("Nessun voto registrato");
+            textViewMedia.setVisibility(View.GONE);
+            textViewMediaPonderata.setVisibility(View.GONE);
+            textViewVotoLaurea.setVisibility(View.GONE);
+        }else{
+            textViewMsgS.setVisibility(View.GONE);
+            textViewMedia.setText("Media:\n"+ utente.getMedia());
+            textViewMediaPonderata.setText("Media ponderata:\n"+ utente.getMediaPonderata());
+            textViewVotoLaurea.setText("Voto di laurea previsto:\n"+ utente.getVotoLaurea());
+        }
+
+
+
+//        textViewMedia.setText("Media:\n"+ utente.getMedia());
+//        textViewMediaPonderata.setText("Media ponderata:\n"+ utente.getMediaPonderata());
+//        textViewVotoLaurea.setText("Voto di laurea previsto:\n"+ utente.getVotoLaurea());
 
         return view;
     }
