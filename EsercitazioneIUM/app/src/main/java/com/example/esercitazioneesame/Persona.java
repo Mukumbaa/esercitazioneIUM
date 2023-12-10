@@ -19,20 +19,22 @@ public class Persona implements Serializable {
     private String dataNascita;
     private Boolean esistenza;
     private int ID;
-    private static ArrayList<Esame> libretto = new ArrayList<>(Arrays.asList(
-            new Esame(30,"Analisi 1",9),
-            new Esame(26,"Programmazione 1",12),
-            new Esame(18,"ALF",6),
-            new Esame(21,"EDI",6),
-            new Esame(30,"Calcolo e metodo scientifico",9),
-            new Esame(30,"nome lunghissimissimissimo incredibile gigante",9),
-            new Esame(30,"Analisi 1",9),
-            new Esame(26,"Programmazione 1",12),
-            new Esame(18,"ALF",6),
-            new Esame(21,"EDI",6),
-            new Esame(30,"Calcolo e metodo scientifico",9)
-
-    ));
+    private ArrayList<Esame> libretto =  new ArrayList<>();
+//            =
+//            new ArrayList<>(Arrays.asList(
+//            new Esame(30,"Analisi 1",9),
+//            new Esame(26,"Programmazione 1",12),
+//            new Esame(18,"ALF",6),
+//            new Esame(21,"EDI",6),
+//            new Esame(30,"Calcolo e metodo scientifico",9),
+//            new Esame(30,"nome lunghissimissimissimo incredibile gigante",9),
+//            new Esame(30,"Analisi 1",9),
+//            new Esame(26,"Programmazione 1",12),
+//            new Esame(18,"ALF",6),
+//            new Esame(21,"EDI",6),
+//            new Esame(30,"Calcolo e metodo scientifico",9)
+//
+//    ));
 
     /*
     private static Persona[] persone = {
@@ -184,5 +186,8 @@ public class Persona implements Serializable {
         }
         media = (media/cfuu)*110/30;
         return (double) Math.round(media * 1000) / 1000;
+    }
+    public void setLibretto(ArrayList<Esame> l){
+        this.libretto = l;
     }
 }

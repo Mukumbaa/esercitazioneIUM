@@ -10,6 +10,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class MainActivity extends AppCompatActivity {
     //public static final String USER_PATH = "com.exemple.esercitazioneesame.utente";
     private EditText editTextNome,editTextCognome,editTextPassword;
@@ -34,6 +37,22 @@ public class MainActivity extends AppCompatActivity {
                 if (utente.getEsistenza()){
                     Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                     //intent.putExtra("NomeUtente",utente.getNome());
+                    if (utente.getNome().equals("Gabriele")){
+                        utente.setLibretto(new ArrayList<>(Arrays.asList(
+                                new Esame(30,"Analisi 1",9),
+                                new Esame(26,"Programmazione 1",12),
+                                new Esame(18,"ALF",6),
+                                new Esame(21,"EDI",6),
+                                new Esame(30,"Calcolo e metodo scientifico",9),
+                                new Esame(30,"nome lunghissimissimissimo incredibile gigante",9),
+                                new Esame(30,"Analisi 1",9),
+                                new Esame(26,"Programmazione 1",12),
+                                new Esame(18,"ALF",6),
+                                new Esame(21,"EDI",6),
+                                new Esame(30,"Calcolo e metodo scientifico",9)
+
+                        )));
+                    }
                     intent.putExtra("utente",utente);
                     intent.putExtra("fragment","home");
                     startActivity(intent);
