@@ -28,3 +28,5 @@
         app:menu="@menu/bottom_navigation_menu" />
 
 </RelativeLayout>
+
+<!--    android:background="#3C3C3C"-->

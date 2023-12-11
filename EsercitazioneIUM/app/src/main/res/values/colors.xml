@@ -6,9 +6,15 @@
     <color name="errore">#FF0000</color>
     <color name="hint">#939393</color>
     <color name="text">#E4E5EB</color>
-    <color name="background">#1E212A</color>
-    <color name="primary">#681AA0</color>
-    <color name="secondary">#380B57</color>
-    <color name="accent">#4F3064</color>
+
+    <color name="background">#292929</color>
+    <color name="primary">#265A97</color>
+    <color name="secondary">#0F2C4F</color>
+    <color name="accent">#38E3FD</color>
+
+<!--    <color name="background">#1E212A</color>-->
+<!--    <color name="primary">#681AA0</color>-->
+<!--    <color name="secondary">#380B57</color>-->
+<!--    <color name="accent">#4F3064</color>-->
 
 </resources>
