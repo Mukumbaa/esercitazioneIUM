@@ -46,7 +46,17 @@ public class ModificaEsameActivity extends AppCompatActivity {
         buttonConfermaModifica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Esame e = new Esame(Integer.parseInt(editTextVotoM.getText().toString()),editTextNomeEsameM.getText().toString(),Integer.parseInt(editTextCfuM.getText().toString()));
+
+                String nomeEsame = editTextNomeEsameM.getText().toString();
+                String voto = editTextVotoM.getText().toString();
+                String cfu = editTextCfuM.getText().toString();
+
+                Esame e = new Esame(
+                        voto.equals("") ? esame.getVoto() : Integer.parseInt(voto),
+                        nomeEsame.equals("") ? esame.getNomeEsame() : nomeEsame,
+                        cfu.equals("") ? esame.getCfu() : Integer.parseInt(cfu)
+                );
+
                 utente.modificaEsame(e,posizioneEsame);
                 Intent intent = new Intent(ModificaEsameActivity.this, HomeActivity.class);
                 intent.putExtra("fragment","libretto");
