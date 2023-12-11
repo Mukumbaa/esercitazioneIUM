@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bottomNavigation"
-
         />
 
 
@@ -21,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
-        app:itemIconTint="#EEE4FD"
+        app:itemIconTint="@color/text"
         app:itemTextColor = "@color/text"
         android:background="#2A2931"
         app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"

@@ -10,7 +10,7 @@
     android:layout_marginStart="12dp"
     android:layout_marginEnd="12dp"
     android:background="@color/background"
-    app:cardBackgroundColor="@color/primary"
+    app:cardBackgroundColor="@color/secondary"
     android:padding="16dp"
     app:cardCornerRadius="20dp"
 
@@ -61,24 +61,29 @@
             android:id="@+id/buttonModifica"
             android:layout_width="52dp"
             android:layout_height="52dp"
+            android:background="@drawable/round_corner"
             android:layout_alignParentEnd="true"
             android:backgroundTint="#4CAF50"
-            android:foreground="@drawable/baseline_edit_24"
+            android:src="@drawable/baseline_edit_24"
             android:layout_centerInParent="true"
             android:layout_marginEnd="90dp"
-
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
             />
 
         <ImageButton
             android:id="@+id/buttonElimina"
             android:layout_width="52dp"
             android:layout_height="52dp"
+            android:background="@drawable/round_corner"
+
             android:layout_alignParentEnd="true"
             android:backgroundTint="@color/errore"
-            android:foreground="@drawable/baseline_delete_24"
+            android:src="@drawable/baseline_delete_24"
             android:layout_centerInParent="true"
             android:layout_marginEnd="20dp"
-
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
 
             />
 
