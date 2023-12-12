@@ -14,7 +14,7 @@
         android:orientation="vertical">
         <Space
             android:layout_width="match_parent"
-            android:layout_height="46dp">
+            android:layout_height="26dp">
         </Space>
         <TextView
             android:layout_width="match_parent"
@@ -29,7 +29,7 @@
             app:layout_constraintTop_toTopOf="parent" />
         <Space
             android:layout_width="match_parent"
-            android:layout_height="56dp">
+            android:layout_height="36dp">
         </Space>
         <TextView
 
@@ -83,6 +83,37 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:hint="@string/rossi"
+            android:textColorHint="@color/hint"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp">
+        </Space>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Matricola"
+            android:textSize="26sp"
+            android:textColor="@color/text"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <EditText
+            android:textColor="@color/text"
+
+            android:id="@+id/editTextMatricola"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:hint="66137"
             android:textColorHint="@color/hint"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -151,7 +182,7 @@
             app:layout_constraintTop_toTopOf="parent" />
         <Space
             android:layout_width="match_parent"
-            android:layout_height="56dp">
+            android:layout_height="10dp">
         </Space>
         <Button
             android:id="@+id/buttonRegistrati"

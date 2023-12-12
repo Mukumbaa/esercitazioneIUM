@@ -15,7 +15,7 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
     //public static final String USER_PATH = "com.exemple.esercitazioneesame.utente";
-    private EditText editTextNome,editTextCognome,editTextPassword;
+    private EditText editTextMatricola,editTextPassword;
     public Persona utente;
     private Button buttonLogin,buttonRegistrazione;
     @Override
@@ -24,8 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
-        editTextNome = findViewById(R.id.editTextNome);
-        editTextCognome = findViewById(R.id.editTextCognome);
+        editTextMatricola = findViewById(R.id.editTextMatricola);
         editTextPassword = findViewById(R.id.editTextPassword);
         buttonLogin = findViewById(R.id.buttonLogin);
         buttonRegistrazione = findViewById(R.id.buttonRegistrazione);
@@ -34,24 +33,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 utente = inviaDati();
-                String nome = editTextNome.getText().toString();
-                String cognome = editTextCognome.getText().toString();
+                String matricola = editTextMatricola.getText().toString();
                 String password = editTextPassword.getText().toString();
 
                 boolean emptyFlag = false;
 
-                if(nome.equals("")){
-                    editTextNome.setHint("Insierire Nome");
-                    editTextNome.setHintTextColor(getResources().getColor(R.color.errore));
-                    editTextNome.clearFocus();
-                    editTextNome.setText("");
-                    emptyFlag = true;
-                }
-                if(cognome.equals("")){
-                    editTextCognome.setHint("Inserire Cognome");
-                    editTextCognome.setHintTextColor(getResources().getColor(R.color.errore));
-                    editTextCognome.clearFocus();
-                    editTextCognome.setText("");
+                if(matricola.equals("")){
+                    editTextMatricola.setHint("Insierire Matricola");
+                    editTextMatricola.setHintTextColor(getResources().getColor(R.color.errore));
+                    editTextMatricola.clearFocus();
+                    editTextMatricola.setText("");
                     emptyFlag = true;
                 }
                 if(password.equals("")){
@@ -87,18 +78,13 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     }else{
-                        if(utente.getNome().equals("null")){
-                            editTextNome.setHint("Nome errato");
-                            editTextNome.setHintTextColor(getResources().getColor(R.color.errore));
-                            editTextNome.clearFocus();
-                            editTextNome.setText("");
+                        if(utente.getMatricola() == -1){
+                            editTextMatricola.setHint("Matricola errata");
+                            editTextMatricola.setHintTextColor(getResources().getColor(R.color.errore));
+                            editTextMatricola.clearFocus();
+                            editTextMatricola.setText("");
                         }
-                        if(utente.getCognome().equals("null")){
-                            editTextCognome.setHint("Cognome errato");
-                            editTextCognome.setHintTextColor(getResources().getColor(R.color.errore));
-                            editTextCognome.clearFocus();
-                            editTextCognome.setText("");
-                        }
+
                         if(utente.getPassword().equals("null")){
                             editTextPassword.setHint("Password errata");
                             editTextPassword.setHintTextColor(getResources().getColor(R.color.errore));
@@ -122,22 +108,11 @@ public class MainActivity extends AppCompatActivity {
     }
     private Persona inviaDati() {
 
-        String nome = editTextNome.getText().toString();
-        String cognome = editTextCognome.getText().toString();
+        int matricola = Integer.parseInt(editTextMatricola.getText().toString());
         String password = editTextPassword.getText().toString();
 
-        if(nome.equals("")){
-            nome="empty";
-        }
-        if(cognome.equals("")){
-            nome="empty";
-        }
-        if(password.equals("")){
-            nome="empty";
-        }
 
-
-        return Persona.findPersona(nome,cognome,password);
+        return Persona.findPersona(matricola,password);
     }
 
 

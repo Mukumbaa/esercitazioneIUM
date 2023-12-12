@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class RegistrazioneActivity extends AppCompatActivity {
-    private EditText editTextNome,editTextCognome,editTextPassword,editTextDataNascita;
+    private EditText editTextNome,editTextCognome,editTextMatricola,editTextPassword,editTextDataNascita;
     public Persona utente;
     private Button buttonRegistrati,buttonTornaAlLogin;
     @Override
@@ -23,6 +23,7 @@ public class RegistrazioneActivity extends AppCompatActivity {
 
         editTextNome = findViewById(R.id.editTextNome);
         editTextCognome = findViewById(R.id.editTextCognome);
+        editTextMatricola = findViewById(R.id.editTextMatricola);
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextDataNascita = findViewById(R.id.editTextDataNascita);
 
@@ -42,6 +43,7 @@ public class RegistrazioneActivity extends AppCompatActivity {
                 String nome = editTextNome.getText().toString();
                 String cognome = editTextCognome.getText().toString();
                 String dataNascita = editTextDataNascita.getText().toString();
+                String matricola = editTextMatricola.getText().toString();
                 String password = editTextPassword.getText().toString();
 
                 boolean emptyFlag = false;
@@ -67,6 +69,13 @@ public class RegistrazioneActivity extends AppCompatActivity {
                     editTextDataNascita.setText("");
                     emptyFlag = true;
                 }
+                if(matricola.equals("")){
+                    editTextMatricola.setHint("Inserire Password");
+                    editTextMatricola.setHintTextColor(getResources().getColor(R.color.errore));
+                    editTextMatricola.clearFocus();
+                    editTextMatricola.setText("");
+                    emptyFlag = true;
+                }
                 if(password.equals("")){
                     editTextPassword.setHint("Inserire Password");
                     editTextPassword.setHintTextColor(getResources().getColor(R.color.errore));
@@ -76,7 +85,7 @@ public class RegistrazioneActivity extends AppCompatActivity {
                 }
 
                 if(!emptyFlag){
-                    Persona utenteNuovo = new Persona(nome,cognome,password,dataNascita,true);
+                    Persona utenteNuovo = new Persona(nome,cognome,Integer.parseInt(matricola),password,dataNascita,true);
 
                     Intent intent = new Intent(RegistrazioneActivity.this, MessaggioFineRegistrazione.class);
 

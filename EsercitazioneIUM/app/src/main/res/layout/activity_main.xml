@@ -14,7 +14,7 @@
         android:orientation="vertical">
         <Space
             android:layout_width="match_parent"
-            android:layout_height="46dp">
+            android:layout_height="56dp">
         </Space>
         <TextView
             android:layout_width="match_parent"
@@ -29,13 +29,13 @@
             app:layout_constraintTop_toTopOf="parent" />
         <Space
             android:layout_width="match_parent"
-            android:layout_height="56dp">
+            android:layout_height="86dp">
         </Space>
         <TextView
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/nome"
+            android:text="Matricola"
             android:textColor="@color/text"
             android:textSize="26sp"
             android:textAlignment="center"
@@ -45,11 +45,11 @@
             app:layout_constraintTop_toTopOf="parent" />
         <EditText
             android:textColor="@color/text"
-            android:id="@+id/editTextNome"
+            android:id="@+id/editTextMatricola"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:hint="@string/mario"
+            android:hint="66137"
             android:textColorHint="@color/hint"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -62,32 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="16dp">
         </Space>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/cognome"
-            android:textSize="26sp"
-            android:textColor="@color/text"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-        <EditText
-            android:textColor="@color/text"
 
-            android:id="@+id/editTextCognome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:hint="@string/rossi"
-            android:textColorHint="@color/hint"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
         <!--
         <Space
             android:layout_width="match_parent"
@@ -115,7 +90,7 @@
         -->
         <Space
             android:layout_width="match_parent"
-            android:layout_height="16dp">
+            android:layout_height="6dp">
         </Space>
         <TextView
             android:layout_width="match_parent"
@@ -143,7 +118,7 @@
             app:layout_constraintTop_toTopOf="parent" />
         <Space
             android:layout_width="match_parent"
-            android:layout_height="56dp">
+            android:layout_height="96dp">
         </Space>
         <Button
             android:id="@+id/buttonLogin"

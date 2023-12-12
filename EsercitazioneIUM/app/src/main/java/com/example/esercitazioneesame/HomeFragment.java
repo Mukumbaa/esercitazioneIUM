@@ -14,7 +14,7 @@ public class HomeFragment extends Fragment {
     private TextView nomeUtente;
     private TextView cognomeUtente;
     private TextView dataNascitaUtente;
-    private TextView idUtente;
+    private TextView matricolaUtente;
 
     private static Persona utente;
 
@@ -30,13 +30,13 @@ public class HomeFragment extends Fragment {
         nomeUtente = view.findViewById(R.id.nomeUtente);
         cognomeUtente = view.findViewById(R.id.cognomeUtente);
         dataNascitaUtente = view.findViewById(R.id.dataNascitaUtente);
-        idUtente = view.findViewById(R.id.idUtente);
+        matricolaUtente = view.findViewById(R.id.matricolaUtente);
 
 
         nomeUtente.setText("Nome:  "+utente.getNome());
         cognomeUtente.setText("Cognome:  "+utente.getCognome());
         dataNascitaUtente.setText("Data di nascita:  "+utente.getDataNascita());
-        idUtente.setText("ID utente:  "+utente.getID());
+        matricolaUtente.setText("Matricola:  "+utente.getMatricola());
         //41041005
         return view;
     }

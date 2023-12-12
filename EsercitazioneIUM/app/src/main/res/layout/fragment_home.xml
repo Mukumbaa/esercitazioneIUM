@@ -76,7 +76,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/text"
         android:textSize="25sp"
-        android:id="@+id/idUtente"
+        android:id="@+id/matricolaUtente"
         android:layout_marginTop="620dp"
         android:layout_marginStart="30dp"
         />

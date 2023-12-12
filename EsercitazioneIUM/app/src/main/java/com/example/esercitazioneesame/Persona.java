@@ -15,6 +15,7 @@ public class Persona implements Serializable {
 
     private String nome;
     private String cognome;
+    private int matricola;
     private String password;
     private String dataNascita;
     private Boolean esistenza;
@@ -37,25 +38,24 @@ public class Persona implements Serializable {
 //    ));
 
     private static ArrayList<Persona> persone = new ArrayList<>(Arrays.asList(
-            new Persona("Gabriele","Lippolis","password","06-12-2002",true),
-            new Persona("Edoardo","Lippolis","password","21-11-2012",true),
-            new Persona("Vito","Lippolis","password","10-02-1966",true),
-            new Persona("Silvia","Garau","password","08-12-1973",true)
+            new Persona("Gabriele","Lippolis",66137,"password","06-12-2002",true),
+            new Persona("Edoardo","Lippolis",66138,"password","21-11-2012",true),
+            new Persona("Vito","Lippolis",66139,"password","10-02-1966",true),
+            new Persona("Silvia","Garau",66140,"password","08-12-1973",true)
     ));
 
 
     public Persona(){
        this.esistenza = true;
-       this.ID = getID();
     };
 
-    public Persona(String nome, String cognome, String password, String dataNascita, Boolean esistenza){
+    public Persona(String nome, String cognome, int matricola,String password, String dataNascita, Boolean esistenza){
         this.nome = nome;
         this.cognome = cognome;
+        this.matricola = matricola;
         this.password = password;
         this.dataNascita = dataNascita;
         this.esistenza = esistenza;
-        this.ID = getID();
     }
     public String getNome(){
         return this.nome;
@@ -63,6 +63,10 @@ public class Persona implements Serializable {
     public String getCognome(){
         return this.cognome;
     }
+    public int getMatricola(){
+        return this.matricola;
+    }
+
     public String getPassword(){
         return this.password;
     }
@@ -85,17 +89,17 @@ public class Persona implements Serializable {
         this.dataNascita = dataNascita;
     }
 
-    public static Persona findPersona(String nome, String cognome, String password){
+    public static Persona findPersona(int matricola, String password){
         for (int i = 0; i< persone.size(); i++){
-            if (nome.equals(persone.get(i).nome) && cognome.equals(persone.get(i).cognome)){
+            if (persone.get(i).getMatricola() == matricola){
                 if (!password.equals(persone.get(i).password)){
-                        return new Persona(persone.get(i).getNome(),persone.get(i).getCognome(),"null","null",false);
+                        return new Persona(persone.get(i).getNome(),persone.get(i).getCognome(),persone.get(i).getMatricola(),"null","null",false);
                 }else{
                     return persone.get(i);
                 }
             }
         }
-        return new Persona("null","null","null","null",false);
+        return new Persona("null","null",-1,"null","null",false);
     }
     public boolean checkUtenteEsistente(){
         for (Persona persona : Persona.persone) {

@@ -8,12 +8,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
 public class AggiungiEsameActivity extends AppCompatActivity {
 
-    private Button buttonAggiungiEsame;
+    private Button buttonAggiungiEsame,buttonTornaIndietro;
     private Persona utente;
     private EditText editTextNomeEsame;
     private EditText editTextVoto;
@@ -25,9 +26,12 @@ public class AggiungiEsameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aggiungi_esame);
 
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
         utente = (Persona) getIntent().getSerializableExtra("utente");
 
         buttonAggiungiEsame = findViewById(R.id.buttonAggiungiEsame);
+        buttonTornaIndietro = findViewById(R.id.buttonTornaIndietro);
         editTextNomeEsame = findViewById(R.id.editTextNomeEsame);
         editTextVoto = findViewById(R.id.editTextVoto);
         editTextCfu = findViewById(R.id.editTextCfu);
@@ -47,6 +51,17 @@ public class AggiungiEsameActivity extends AppCompatActivity {
                 finish();
             }
         });
+        buttonTornaIndietro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AggiungiEsameActivity.this, HomeActivity.class);
+                intent.putExtra("fragment","libretto");
+                intent.putExtra("utente",utente);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
     }
 }

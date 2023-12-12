@@ -37,13 +37,15 @@
             android:id="@+id/librettoLista"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/aggiungiEsame"
             android:layout_below="@+id/textViewLibretto"
             android:layout_marginEnd="10dp"
             android:layout_marginStart="10dp"
+            android:layout_above="@+id/aggiungiEsame"
+            android:scrollbars="none"
             />
+
         <Button
-            android:id="@+id/aggiungiEsame"
+        android:id="@+id/aggiungiEsame"
             android:layout_width="230dp"
             android:layout_height="50dp"
             android:text="Aggiungi esame"
