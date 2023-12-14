@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(@NonNull View widget) {
                 Intent intent = new Intent(MainActivity.this, RegistrazioneActivity.class);
                 startActivity(intent);
+                finish();
             }
 
             @Override

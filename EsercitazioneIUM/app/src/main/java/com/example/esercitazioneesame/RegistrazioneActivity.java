@@ -1,20 +1,37 @@
 package com.example.esercitazioneesame;
 
 import androidx.activity.OnBackPressedCallback;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.icu.text.SimpleDateFormat;
+import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Locale;
 
 public class RegistrazioneActivity extends AppCompatActivity {
     private EditText editTextNome,editTextCognome,editTextMatricola,editTextPassword,editTextDataNascita;
     public Persona utente;
-    private Button buttonRegistrati,buttonTornaAlLogin;
+    private TextView accedi;
+    private Calendar myCalendar= Calendar.getInstance();
+
+    private Button buttonRegistrati;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,14 +43,44 @@ public class RegistrazioneActivity extends AppCompatActivity {
         editTextMatricola = findViewById(R.id.editTextMatricola);
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextDataNascita = findViewById(R.id.editTextDataNascita);
+        accedi = findViewById(R.id.accedi);
 
         buttonRegistrati = findViewById(R.id.buttonRegistrati);
-        buttonTornaAlLogin = findViewById(R.id.buttonTornaAlLogin);
+        SpannableString ss = new SpannableString(accedi.getText().toString());
+        ClickableSpan clickableSpan = new ClickableSpan() {
+            @Override
+            public void onClick(@NonNull View widget) {
+                Intent intent = new Intent(RegistrazioneActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
 
-        buttonTornaAlLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void updateDrawState(@NonNull TextPaint ds) {
+                super.updateDrawState(ds);
+                ds.setColor(getResources().getColor(R.color.accent));
+                ds.setUnderlineText(false);
+            }
+        };
+        ss.setSpan(clickableSpan,20,30, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        accedi.setText(ss);
+        accedi.setMovementMethod(LinkMovementMethod.getInstance());
+
+
+        DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int day) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH,month);
+                myCalendar.set(Calendar.DAY_OF_MONTH,day);
+                updateLabel();
+            }
+        };
+
+        editTextDataNascita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                new DatePickerDialog(RegistrazioneActivity.this,date,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
         buttonRegistrati.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +117,7 @@ public class RegistrazioneActivity extends AppCompatActivity {
                     emptyFlag = true;
                 }
                 if(matricola.equals("")){
-                    editTextMatricola.setHint("Inserire Password");
+                    editTextMatricola.setHint("Inserire Matricola");
                     editTextMatricola.setHintTextColor(getResources().getColor(R.color.errore));
                     editTextMatricola.clearFocus();
                     editTextMatricola.setText("");
@@ -115,6 +162,11 @@ public class RegistrazioneActivity extends AppCompatActivity {
         getOnBackPressedDispatcher().addCallback(this, callback);
 
 
+    }
+    private void updateLabel(){
+        String myFormat="MM/dd/yy";
+        SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.ITALY);
+        editTextDataNascita.setText(dateFormat.format(myCalendar.getTime()));
     }
 
 }

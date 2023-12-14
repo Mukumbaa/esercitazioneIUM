@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginEnd="60dp"
-        android:drawableStart="@drawable/baseline_person_24"
+        android:drawableStart="@drawable/user"
         android:drawablePadding="15dp"
         android:drawableTint="@color/text"
         android:hint="Matricola"
@@ -55,7 +55,7 @@
         android:layout_centerInParent="true"
         android:layout_marginStart="60dp"
         android:layout_marginEnd="60dp"
-        android:drawableStart="@drawable/baseline_lock_24"
+        android:drawableStart="@drawable/lock"
         android:drawablePadding="15dp"
         android:drawableTint="@color/text"
         android:hint="Password"
@@ -65,8 +65,7 @@
         android:textAlignment="gravity"
         android:textColor="@color/text"
         android:textColorHint="@color/hint"
-        android:textSize="20sp"
-        />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/buttonHidePassword"

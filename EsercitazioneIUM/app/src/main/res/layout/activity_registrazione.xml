@@ -6,16 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".RegistrazioneActivity"
     android:orientation="vertical"
+    android:fillViewport="true"
     android:background="@color/background"
     >
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="26dp">
-        </Space>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,167 +21,126 @@
             android:textSize="36sp"
             android:textColor="@color/text"
             android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="36dp">
-        </Space>
-        <TextView
+            android:layout_above="@id/editTextNome"
+            android:layout_marginBottom="70dp"
 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/nome"
-            android:textColor="@color/text"
-            android:textSize="26sp"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            />
+
+
         <EditText
-            android:textColor="@color/text"
-
             android:id="@+id/editTextNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:hint="@string/mario"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:drawableStart="@drawable/user_card"
+            android:drawablePadding="15dp"
+            android:drawableTint="@color/text"
+            android:hint="Nome"
+            android:paddingStart="10dp"
+            android:textAlignment="gravity"
+            android:textColor="@color/text"
             android:textColorHint="@color/hint"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="20sp"
+            android:maxLength="20"
+            android:layout_above="@id/editTextCognome"
+            android:layout_marginBottom="16dp"
             />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="16dp">
-        </Space>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/cognome"
-            android:textSize="26sp"
-            android:textColor="@color/text"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+
+
         <EditText
-            android:textColor="@color/text"
-
             android:id="@+id/editTextCognome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:hint="@string/rossi"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:drawableStart="@drawable/user_card"
+            android:drawablePadding="15dp"
+            android:drawableTint="@color/text"
+            android:hint="Cognome"
+            android:paddingStart="10dp"
+            android:textAlignment="gravity"
+            android:textColor="@color/text"
             android:textColorHint="@color/hint"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="16dp">
-        </Space>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Matricola"
-            android:textSize="26sp"
-            android:textColor="@color/text"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="20sp"
+            android:maxLength="20"
+            android:layout_above="@id/editTextMatricola"
+            android:layout_marginBottom="16dp"
             />
-        <EditText
-            android:textColor="@color/text"
 
+        <EditText
             android:id="@+id/editTextMatricola"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:hint="66137"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:drawableStart="@drawable/user"
+            android:drawablePadding="15dp"
+            android:drawableTint="@color/text"
+            android:hint="Matricola"
+            android:paddingStart="10dp"
+            android:textAlignment="gravity"
+            android:textColor="@color/text"
             android:textColorHint="@color/hint"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="20sp"
+            android:maxLength="20"
+            android:layout_above="@+id/editTextDataNascita"
+            android:layout_marginBottom="16dp"
+            />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="16dp">
-        </Space>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/data_di_nascita"
-            android:textColor="@color/text"
-            android:textSize="26sp"
-
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
         <EditText
-            android:textColor="@color/text"
-
-            android:layout_width="match_parent"
             android:id="@+id/editTextDataNascita"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:hint="@string/_02_12_2002"
-            android:textColorHint="@color/hint"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_centerInParent="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:drawableStart="@drawable/calendar"
+            android:drawablePadding="15dp"
+            android:drawableTint="@color/text"
+            android:hint="Data di Nascita"
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="16dp">
-        </Space>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/passoword"
-            android:textSize="26sp"
+            android:maxLength="20"
+            android:paddingStart="10dp"
+            android:textAlignment="gravity"
             android:textColor="@color/text"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textColorHint="@color/hint"
+
+            android:textSize="20sp" />
+
         <EditText
-            android:textColor="@color/text"
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:hint="@string/_123456"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:drawableStart="@drawable/lock"
+            android:drawablePadding="15dp"
+            android:drawableTint="@color/text"
+            android:hint="Password"
+            android:paddingStart="10dp"
+            android:textAlignment="gravity"
+            android:textColor="@color/text"
             android:textColorHint="@color/hint"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <Space
+            android:textSize="20sp"
+            android:maxLength="20"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/editTextDataNascita"
+            />
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="10dp">
-        </Space>
+            android:layout_height="wrap_content"
+            android:id="@+id/accedi"
+            android:layout_below="@+id/editTextPassword"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:paddingStart="20dp"
+            android:textAlignment="center"
+            android:text="Hai già un account? Accedi qui"
+            android:textColor="@color/text"
+            android:textSize="16dp"
+            />
         <Button
             android:id="@+id/buttonRegistrati"
             android:layout_width="225dp"
@@ -195,14 +152,15 @@
             android:layout_gravity="center"
             android:textSize="26sp"
             android:textColor="@color/text"
-            >
-
-        </Button>
+            android:layout_below="@id/editTextPassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            />
         <Space
             android:layout_width="match_parent"
             android:layout_height="16dp">
         </Space>
-        <Button
+<!--        <Button
             android:id="@+id/buttonTornaAlLogin"
             android:layout_width="225dp"
             android:layout_height="wrap_content"
@@ -213,11 +171,11 @@
             android:backgroundTint="@color/secondary"
             android:textSize="26sp"
             android:textColor="@color/text"
-            >
-        </Button>
+
+            />-->
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 
