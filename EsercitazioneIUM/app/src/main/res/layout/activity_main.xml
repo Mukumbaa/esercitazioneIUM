@@ -31,31 +31,22 @@
             android:layout_width="match_parent"
             android:layout_height="86dp">
         </Space>
-        <TextView
 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Matricola"
-            android:textColor="@color/text"
-            android:textSize="26sp"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
         <EditText
             android:textColor="@color/text"
             android:id="@+id/editTextMatricola"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:hint="66137"
+            android:hint="Matricola"
             android:textColorHint="@color/hint"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:textAlignment="gravity"
+            android:layout_marginEnd="60dp"
+            android:layout_marginStart="60dp"
+            android:drawableStart="@drawable/baseline_person_24"
+            android:drawableTint="@color/text"
+            android:drawablePadding="15dp"
+            android:paddingStart="10dp"
             />
 
         <Space
@@ -88,34 +79,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
         -->
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="6dp">
-        </Space>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/passoword"
-            android:textSize="26sp"
-            android:textColor="@color/text"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
         <EditText
             android:textColor="@color/text"
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:hint="@string/_123456"
+            android:inputType="textPassword"
+            android:hint="Password"
             android:textColorHint="@color/hint"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textAlignment="gravity"
+            android:layout_marginEnd="60dp"
+            android:layout_marginStart="60dp"
+            android:drawableStart="@drawable/baseline_person_24"
+            android:drawableTint="@color/text"
+            android:drawablePadding="15dp"
+            android:paddingStart="10dp"
+            />
         <Space
             android:layout_width="match_parent"
             android:layout_height="96dp">

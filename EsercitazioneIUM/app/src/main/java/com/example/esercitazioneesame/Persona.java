@@ -113,27 +113,6 @@ public class Persona implements Serializable {
     public void aggiungiUtente(){
         Persona.persone.add(this);
     }
-    public int getID(){
-
-
-        //
-
-
-        if (this.ID != 0){
-            return this.ID;
-        }
-
-        String id = "";
-        char[] str = (this.getNome()+this.getCognome()+this.getDataNascita()).toCharArray();
-
-        for (char c:str) {
-            id += (int)c;
-        }
-        id = id.substring(this.getNome().length(),this.getNome().length()+3) + id.substring(this.getCognome().length(),this.getCognome().length()+3) + id.substring(this.getDataNascita().length(),this.getDataNascita().length()+2);
-
-        this.ID = Integer.parseInt(id);
-        return this.ID;
-    }
     public void addEsame(Esame e){
         libretto.add(e);
     }
@@ -153,9 +132,7 @@ public class Persona implements Serializable {
         libretto.remove(pos);
     }
     public void modificaEsame(Esame e, int posizione){
-        Log.d("SIUM",e.getNomeEsame()+String.valueOf(posizione));
         libretto.set(posizione,e);
-        Log.d("SIUM",":"+libretto.get(posizione).getNomeEsame());
     }
     public double getMedia(){
         double media = 0;
