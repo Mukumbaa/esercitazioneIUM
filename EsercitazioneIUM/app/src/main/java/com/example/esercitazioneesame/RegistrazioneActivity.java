@@ -85,7 +85,7 @@ public class RegistrazioneActivity extends AppCompatActivity {
                 }
 
                 if(!emptyFlag){
-                    Persona utenteNuovo = new Persona(nome,cognome,Integer.parseInt(matricola),password,dataNascita,true);
+                    Persona utenteNuovo = new Persona(nome,cognome,matricola,password,dataNascita,true);
 
                     Intent intent = new Intent(RegistrazioneActivity.this, MessaggioFineRegistrazione.class);
 
