@@ -9,11 +9,13 @@ import android.content.Intent;
 import android.icu.text.SimpleDateFormat;
 import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -31,7 +33,7 @@ public class RegistrazioneActivity extends AppCompatActivity {
     private TextView accedi;
     private Calendar myCalendar= Calendar.getInstance();
 
-    private Button buttonRegistrati;
+    private Button buttonRegistrati,buttonHidePassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +45,7 @@ public class RegistrazioneActivity extends AppCompatActivity {
         editTextMatricola = findViewById(R.id.editTextMatricola);
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextDataNascita = findViewById(R.id.editTextDataNascita);
+        buttonHidePassword = findViewById(R.id.buttonHidePassword);
         accedi = findViewById(R.id.accedi);
 
         buttonRegistrati = findViewById(R.id.buttonRegistrati);
@@ -67,7 +70,7 @@ public class RegistrazioneActivity extends AppCompatActivity {
         accedi.setMovementMethod(LinkMovementMethod.getInstance());
 
 
-        DatePickerDialog.OnDateSetListener date =new DatePickerDialog.OnDateSetListener() {
+        DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int day) {
                 myCalendar.set(Calendar.YEAR, year);
@@ -77,12 +80,28 @@ public class RegistrazioneActivity extends AppCompatActivity {
             }
         };
 
-        editTextDataNascita.setOnClickListener(new View.OnClickListener() {
+        DatePickerDialog d = new DatePickerDialog(RegistrazioneActivity.this,date,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH));
+
+        editTextDataNascita.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (!d.isShowing()) {
+                    // Chiudi il dialogo precedente se è ancora aperto
+                    d.dismiss();
+                    // Mostra un nuovo DatePickerDialog
+                    d.show();
+                }else {
+                    d.show();
+                }
+                return false;
+            }
+        });
+/*        editTextDataNascita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new DatePickerDialog(RegistrazioneActivity.this,date,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
-        });
+        });*/
         buttonRegistrati.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -151,7 +170,33 @@ public class RegistrazioneActivity extends AppCompatActivity {
             }
         });
 
+        buttonHidePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("SIUM","entro");
 
+                int i = editTextPassword.getInputType();
+                Log.d("SIUM",String.valueOf(i));
+                if(i == (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD))
+                {
+                    Log.d("SIUM","primo if");
+                    editTextPassword.setTypeface(editTextMatricola.getTypeface());
+                    buttonHidePassword.setForeground(getDrawable(R.drawable.show));
+                    editTextPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
+                    editTextPassword.setTypeface(editTextMatricola.getTypeface());
+                    editTextPassword.setSelection(editTextPassword.getText().toString().length());
+                }
+                if(i == (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL)){
+                    Log.d("SIUM","secondo if");
+
+                    editTextPassword.setTypeface(editTextMatricola.getTypeface());
+                    buttonHidePassword.setForeground(getDrawable(R.drawable.hide));
+                    editTextPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    editTextPassword.setTypeface(editTextMatricola.getTypeface());
+                    editTextPassword.setSelection(editTextPassword.getText().toString().length());
+                }
+            }
+        });
         // Crea un callback per gestire il pulsante indietro
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
