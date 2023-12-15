@@ -88,6 +88,7 @@
         />
 
     <FrameLayout
+        android:id="@+id/frameNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/corner_box"
@@ -122,7 +123,85 @@
             android:layout_height="26dp"
             android:src="@drawable/arrow_right"
             android:layout_gravity="center|end"
-            android:layout_marginRight="17dp"
+            android:layout_marginEnd="17dp"
+            app:tint="#BF38E3FD" />
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/frameCognome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corner_box"
+        android:layout_below="@id/frameNome"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cognome"
+            android:textSize="23dp"
+            android:textColor="@color/text"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/textViewCognome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lippolis"
+            android:textSize="20dp"
+            android:textColor="#A6E4E5EB"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="10dp"
+            />
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/arrow_right"
+            android:layout_gravity="center|end"
+            android:layout_marginEnd="17dp"
+            app:tint="#BF38E3FD" />
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/frameDataNascita"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corner_box"
+        android:layout_below="@id/frameCognome"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data di Nascita"
+            android:textSize="23dp"
+            android:textColor="@color/text"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/textViewDataNascita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="06/12/2002"
+            android:textSize="20dp"
+            android:textColor="#A6E4E5EB"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="10dp"
+            />
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/arrow_right"
+            android:layout_gravity="center|end"
+            android:layout_marginEnd="17dp"
             app:tint="#BF38E3FD" />
     </FrameLayout>
 
