@@ -38,10 +38,10 @@ public class Persona implements Serializable {
 //    ));
 
     private static ArrayList<Persona> persone = new ArrayList<>(Arrays.asList(
-            new Persona("Gabriele","Lippolis","66137","password","06-12-2002",true),
-            new Persona("Edoardo","Lippolis","66138","password","21-11-2012",true),
-            new Persona("Vito","Lippolis","66139","password","10-02-1966",true),
-            new Persona("Silvia","Garau","66140","password","08-12-1973",true)
+            new Persona("Gabriele","Lippolis","66137","password","06/12/2002",true),
+            new Persona("Edoardo","Lippolis","66138","password","21/11/2012",true),
+            new Persona("Vito","Lippolis","66139","password","10/02/1966",true),
+            new Persona("Silvia","Garau","66140","password","08/12/1973",true)
     ));
 
 

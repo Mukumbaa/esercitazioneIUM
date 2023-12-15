@@ -1,208 +1,334 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="fill_parent"
     tools:context=".HomeFragment"
     android:background="@color/background"
     >
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="@drawable/homebackground"
-        android:backgroundTint="@color/primary"
-        />
-
-    <ImageView
-        android:layout_width="165dp"
-        android:layout_height="165dp"
-        android:background="@drawable/baseline_circle_24"
-        android:backgroundTint="@color/primary"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="193dp"
-        />
-
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:background="@drawable/baseline_account_circle_24"
-        android:backgroundTint="@color/black"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
-        />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Profilo"
-        android:textColor="@color/text"
-        android:textSize="30sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/text"
-        android:textSize="20sp"
-        android:id="@+id/nomeUtente"
-        android:drawableStart="@drawable/user_card"
-        android:drawableTint="@color/text"
-        android:text="  Gabriele Lippolis"
-        android:layout_marginTop="485dp"
-        android:layout_marginStart="30dp"
-        android:visibility="gone"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/text"
-        android:drawableStart="@drawable/calendar"
-        android:drawableTint="@color/text"
-        android:text="  06/12/2002"
-        android:textSize="20sp"
-        android:layout_marginStart="30dp"
-        android:id="@+id/dataNascitaUtente"
-        android:layout_below="@id/nomeUtente"
-        android:visibility="gone"
-
-
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/text"
-        android:textSize="20sp"
-        android:drawableStart="@drawable/user"
-        android:drawableTint="@color/text"
-        android:text="  66137"
-        android:id="@+id/matricolaUtente"
-        android:layout_marginStart="30dp"
-        android:layout_below="@id/dataNascitaUtente"
-        android:visibility="gone"
-
-        />
-
-    <FrameLayout
-        android:id="@+id/frameNome"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/corner_box"
-        android:layout_below="@id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        >
-        <TextView
+        android:layout_height="match_parent">
+
+        <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nome"
-            android:textSize="23dp"
-            android:textColor="@color/text"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            />
-        <TextView
-            android:id="@+id/textViewNome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gabriele"
-            android:textSize="20dp"
-            android:textColor="#A6E4E5EB"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginBottom="10dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/homebackground"
+            android:backgroundTint="@color/primary"
+            android:visibility="gone"
             />
         <ImageView
-            android:layout_width="26dp"
-            android:layout_height="26dp"
-            android:src="@drawable/arrow_right"
-            android:layout_gravity="center|end"
-            android:layout_marginEnd="17dp"
-            app:tint="#BF38E3FD" />
-    </FrameLayout>
-    <FrameLayout
-        android:id="@+id/frameCognome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/corner_box"
-        android:layout_below="@id/frameNome"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cognome"
-            android:textSize="23dp"
-            android:textColor="@color/text"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            />
-        <TextView
-            android:id="@+id/textViewCognome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lippolis"
-            android:textSize="20dp"
-            android:textColor="#A6E4E5EB"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginBottom="10dp"
+            android:id="@+id/upBox"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/secondary"
             />
         <ImageView
-            android:layout_width="26dp"
-            android:layout_height="26dp"
-            android:src="@drawable/arrow_right"
-            android:layout_gravity="center|end"
-            android:layout_marginEnd="17dp"
-            app:tint="#BF38E3FD" />
-    </FrameLayout>
-    <FrameLayout
-        android:id="@+id/frameDataNascita"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/corner_box"
-        android:layout_below="@id/frameCognome"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Data di Nascita"
-            android:textSize="23dp"
-            android:textColor="@color/text"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/baseline_circle_24"
+            android:backgroundTint="@color/primary"
+            android:layout_alignStart="@id/upBox"
+            android:layout_marginTop="85dp"
             />
-        <TextView
-            android:id="@+id/textViewDataNascita"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="06/12/2002"
-            android:textSize="20dp"
-            android:textColor="#A6E4E5EB"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginBottom="10dp"
-            />
-        <ImageView
-            android:layout_width="26dp"
-            android:layout_height="26dp"
-            android:src="@drawable/arrow_right"
-            android:layout_gravity="center|end"
-            android:layout_marginEnd="17dp"
-            app:tint="#BF38E3FD" />
-    </FrameLayout>
 
-</RelativeLayout>
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/baseline_account_circle_24"
+            android:backgroundTint="@color/black"
+            android:layout_alignStart="@id/upBox"
+            android:layout_marginTop="90dp"
+            android:layout_marginStart="5dp"
+            />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/upBox"
+            android:layout_marginStart="130dp"
+            android:text="Profilo"
+            android:textColor="@color/text"
+            android:textSize="30sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            android:id="@+id/nomeUtente"
+            android:drawableStart="@drawable/user_card"
+            android:drawableTint="@color/text"
+            android:text="  Gabriele Lippolis"
+            android:layout_marginTop="485dp"
+            android:layout_marginStart="30dp"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:drawableStart="@drawable/calendar"
+            android:drawableTint="@color/text"
+            android:text="  06/12/2002"
+            android:textSize="20sp"
+            android:layout_marginStart="30dp"
+            android:id="@+id/dataNascitaUtente"
+            android:layout_below="@id/nomeUtente"
+            android:visibility="gone"
+
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:textSize="20sp"
+            android:drawableStart="@drawable/user"
+            android:drawableTint="@color/text"
+            android:text="  66137"
+            android:id="@+id/matricolaUtente"
+            android:layout_marginStart="30dp"
+            android:layout_below="@id/dataNascitaUtente"
+            android:visibility="gone"
+
+            />
+
+        <FrameLayout
+            android:id="@+id/frameNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/corner_box"
+            android:layout_below="@id/upBox"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="90dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome"
+                android:textSize="23dp"
+                android:textColor="@color/text"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:id="@+id/textViewNome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gabriele"
+                android:textSize="20dp"
+                android:textColor="#A6E4E5EB"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginBottom="10dp"
+                />
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/arrow_right"
+                android:layout_gravity="center|end"
+                android:layout_marginEnd="17dp"
+                app:tint="#BF38E3FD" />
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/frameCognome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/corner_box"
+            android:layout_below="@id/frameNome"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cognome"
+                android:textSize="23dp"
+                android:textColor="@color/text"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:id="@+id/textViewCognome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lippolis"
+                android:textSize="20dp"
+                android:textColor="#A6E4E5EB"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginBottom="10dp"
+                />
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/arrow_right"
+                android:layout_gravity="center|end"
+                android:layout_marginEnd="17dp"
+                app:tint="#BF38E3FD" />
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/frameDataNascita"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/corner_box"
+            android:layout_below="@id/frameCognome"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data di nascita"
+                android:textSize="23dp"
+                android:textColor="@color/text"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:id="@+id/textViewDataNascita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="06/12/2002"
+                android:textSize="20dp"
+                android:textColor="#A6E4E5EB"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginBottom="10dp"
+                />
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/arrow_right"
+                android:layout_gravity="center|end"
+                android:layout_marginEnd="17dp"
+                app:tint="#BF38E3FD" />
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/frameMatricola"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/corner_box"
+            android:layout_below="@id/frameDataNascita"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Matricola"
+                android:textSize="23dp"
+                android:textColor="@color/text"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:id="@+id/textViewMatricola"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="66137"
+                android:textSize="20dp"
+                android:textColor="#A6E4E5EB"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginBottom="10dp"
+                />
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/arrow_right"
+                android:layout_gravity="center|end"
+                android:layout_marginEnd="17dp"
+                app:tint="#BF38E3FD" />
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/framePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/corner_box"
+            android:layout_below="@id/frameMatricola"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textSize="23dp"
+                android:textColor="@color/text"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:id="@+id/textViewPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="********"
+                android:textSize="20dp"
+                android:textColor="#A6E4E5EB"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginBottom="10dp"
+                />
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/arrow_right"
+                android:layout_gravity="center|end"
+                android:layout_marginEnd="17dp"
+                app:tint="#BF38E3FD" />
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/frameEliminaAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/corner_box"
+            android:layout_below="@id/framePassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Elimina Account"
+                android:textSize="23dp"
+                android:textColor="@color/text"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                />
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/arrow_right"
+                android:layout_gravity="center|end"
+                android:layout_marginEnd="17dp"
+                app:tint="#BF38E3FD" />
+        </FrameLayout>
+
+
+
+    </RelativeLayout>
+
+
+</ScrollView>
