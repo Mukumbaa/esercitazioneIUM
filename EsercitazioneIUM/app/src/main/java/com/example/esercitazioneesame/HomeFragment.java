@@ -15,7 +15,6 @@ public class HomeFragment extends Fragment {
     private TextView cognomeUtente;
     private TextView dataNascitaUtente;
     private TextView matricolaUtente;
-
     private static Persona utente;
 
     @Override
@@ -28,15 +27,15 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         nomeUtente = view.findViewById(R.id.nomeUtente);
-        cognomeUtente = view.findViewById(R.id.cognomeUtente);
+//        cognomeUtente = view.findViewById(R.id.cognomeUtente);
         dataNascitaUtente = view.findViewById(R.id.dataNascitaUtente);
         matricolaUtente = view.findViewById(R.id.matricolaUtente);
 
 
-        nomeUtente.setText("Nome:  "+utente.getNome());
-        cognomeUtente.setText("Cognome:  "+utente.getCognome());
-        dataNascitaUtente.setText("Data di nascita:  "+utente.getDataNascita());
-        matricolaUtente.setText("Matricola:  "+utente.getMatricola());
+        nomeUtente.setText("  "+utente.getNome()+" "+utente.getCognome());
+//        cognomeUtente.setText("Cognome:  "+utente.getCognome());
+        dataNascitaUtente.setText("  "+utente.getDataNascita());
+        matricolaUtente.setText("  "+utente.getMatricola());
         //41041005
         return view;
     }

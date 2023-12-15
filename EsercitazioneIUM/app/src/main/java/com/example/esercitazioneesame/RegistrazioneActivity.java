@@ -22,6 +22,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,7 +34,8 @@ public class RegistrazioneActivity extends AppCompatActivity {
     private TextView accedi;
     private Calendar myCalendar= Calendar.getInstance();
 
-    private Button buttonRegistrati,buttonHidePassword;
+    private Button/*buttonRegistrati,*/buttonHidePassword;
+    private ImageButton buttonRegistrati;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -209,7 +211,7 @@ public class RegistrazioneActivity extends AppCompatActivity {
 
     }
     private void updateLabel(){
-        String myFormat="MM/dd/yy";
+        String myFormat="dd/MM/yy";
         SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.ITALY);
         editTextDataNascita.setText(dateFormat.format(myCalendar.getTime()));
     }

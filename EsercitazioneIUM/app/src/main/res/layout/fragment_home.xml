@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -45,40 +46,84 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/text"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:id="@+id/nomeUtente"
+        android:drawableStart="@drawable/user_card"
+        android:drawableTint="@color/text"
+        android:text="  Gabriele Lippolis"
         android:layout_marginTop="485dp"
         android:layout_marginStart="30dp"
+        android:visibility="gone"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/text"
-        android:textSize="25sp"
-        android:id="@+id/cognomeUtente"
-        android:layout_marginTop="530dp"
+        android:drawableStart="@drawable/calendar"
+        android:drawableTint="@color/text"
+        android:text="  06/12/2002"
+        android:textSize="20sp"
         android:layout_marginStart="30dp"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/text"
-        android:textSize="25sp"
         android:id="@+id/dataNascitaUtente"
-        android:layout_marginTop="575dp"
-        android:layout_marginStart="30dp"
+        android:layout_below="@id/nomeUtente"
+        android:visibility="gone"
+
+
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/text"
-        android:textSize="25sp"
+        android:textSize="20sp"
+        android:drawableStart="@drawable/user"
+        android:drawableTint="@color/text"
+        android:text="  66137"
         android:id="@+id/matricolaUtente"
-        android:layout_marginTop="620dp"
         android:layout_marginStart="30dp"
+        android:layout_below="@id/dataNascitaUtente"
+        android:visibility="gone"
+
         />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corner_box"
+        android:layout_below="@id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome"
+            android:textSize="23dp"
+            android:textColor="@color/text"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/textViewNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gabriele"
+            android:textSize="20dp"
+            android:textColor="#A6E4E5EB"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="10dp"
+            />
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/arrow_right"
+            android:layout_gravity="center|end"
+            android:layout_marginRight="17dp"
+            app:tint="#BF38E3FD" />
+    </FrameLayout>
 
 </RelativeLayout>

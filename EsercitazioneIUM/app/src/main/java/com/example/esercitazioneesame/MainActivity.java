@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextMatricola,editTextPassword;
     private TextView registrati;
     public Persona utente;
-    private Button buttonLogin,buttonHidePassword;
+    private Button /*buttonLogin,*/buttonHidePassword;
+    private ImageButton buttonLogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         buttonHidePassword = findViewById(R.id.buttonHidePassword);
 //        buttonRegistrazione = findViewById(R.id.buttonRegistrazione);
         registrati = findViewById(R.id.registrati);
-
         SpannableString ss = new SpannableString(registrati.getText().toString());
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
