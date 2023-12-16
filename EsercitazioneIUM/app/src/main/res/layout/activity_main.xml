@@ -47,6 +47,7 @@
         android:layout_marginBottom="16dp"
         android:layout_above="@+id/editTextPassword"
         android:maxLength="20"
+        android:inputType="number"
         />
 
     <EditText

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -22,22 +23,40 @@
             android:layout_centerVertical="true"
             android:textSize="30sp"
             />
-        <TextView
-            android:id="@+id/textViewLibretto"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textColor="@color/text"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:textSize="30sp"
+            android:layout_height="53dp"
+            android:background="@color/accent"
+
             />
+        <FrameLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/header"
+            android:background="@color/secondary"
+            android:layout_marginBottom="10dp"
+            >
+
+            <TextView
+                android:id="@+id/textViewLibretto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text"
+                android:textSize="30sp"
+                android:text="Libretto"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"
+                />
+        </FrameLayout>
+
 
         <ListView
             android:id="@+id/librettoLista"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewLibretto"
+            android:layout_below="@+id/header"
             android:layout_marginEnd="10dp"
             android:layout_marginStart="10dp"
             android:layout_above="@+id/buttonAggiungiEsame"
@@ -60,7 +79,7 @@
             />-->
         <ImageButton
             android:id="@+id/buttonAggiungiEsame"
-            android:layout_width="190dp"
+            android:layout_width="203dp"
             android:layout_height="50dp"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="5dp"
@@ -81,11 +100,22 @@
             android:layout_above="@id/spacer"
             android:layout_alignParentEnd="true"
             android:gravity="center"
-            android:layout_marginEnd="5dp"
-
-
+            android:layout_marginEnd="23dp"
+            android:layout_marginBottom="1dp"
+            />
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/baseline_add_24"
+            app:tint="@color/text"
+            android:layout_above="@id/spacer"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="12dp"
 
             />
+
         <Space
             android:id="@+id/spacer"
             android:layout_width="match_parent"

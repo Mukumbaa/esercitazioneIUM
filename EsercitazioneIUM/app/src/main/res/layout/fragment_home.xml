@@ -19,6 +19,11 @@
             android:visibility="gone"
             />
         <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="153dp"
+            android:background="@color/accent"
+            />
+        <ImageView
             android:id="@+id/upBox"
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -136,7 +141,7 @@
                 android:src="@drawable/arrow_right"
                 android:layout_gravity="center|end"
                 android:layout_marginEnd="17dp"
-                app:tint="#BF38E3FD" />
+                app:tint="#38E3FD" />
         </FrameLayout>
         <FrameLayout
             android:id="@+id/frameCognome"
@@ -175,7 +180,7 @@
                 android:src="@drawable/arrow_right"
                 android:layout_gravity="center|end"
                 android:layout_marginEnd="17dp"
-                app:tint="#BF38E3FD" />
+                app:tint="#38E3FD" />
         </FrameLayout>
         <FrameLayout
             android:id="@+id/frameDataNascita"
@@ -214,7 +219,7 @@
                 android:src="@drawable/arrow_right"
                 android:layout_gravity="center|end"
                 android:layout_marginEnd="17dp"
-                app:tint="#BF38E3FD" />
+                app:tint="#38E3FD" />
         </FrameLayout>
         <FrameLayout
             android:id="@+id/frameMatricola"
@@ -253,7 +258,7 @@
                 android:src="@drawable/arrow_right"
                 android:layout_gravity="center|end"
                 android:layout_marginEnd="17dp"
-                app:tint="#BF38E3FD" />
+                app:tint="#38E3FD" />
         </FrameLayout>
         <FrameLayout
             android:id="@+id/framePassword"
@@ -292,7 +297,7 @@
                 android:src="@drawable/arrow_right"
                 android:layout_gravity="center|end"
                 android:layout_marginEnd="17dp"
-                app:tint="#BF38E3FD" />
+                app:tint="#38E3FD" />
         </FrameLayout>
         <FrameLayout
             android:id="@+id/frameEliminaAccount"
@@ -304,6 +309,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
             >
             <TextView
                 android:layout_width="wrap_content"
@@ -323,7 +329,7 @@
                 android:src="@drawable/arrow_right"
                 android:layout_gravity="center|end"
                 android:layout_marginEnd="17dp"
-                app:tint="#BF38E3FD" />
+                app:tint="#38E3FD" />
         </FrameLayout>
 
 

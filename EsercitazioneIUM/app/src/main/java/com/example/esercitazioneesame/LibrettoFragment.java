@@ -46,9 +46,9 @@ public class LibrettoFragment extends Fragment {
 
         if (utente.getLibretto().size() == 0){
             textViewMsg.setText("Nessun voto registrato");
-            textViewLibretto.setVisibility(View.GONE);
+            //textViewLibretto.setVisibility(View.GONE);
         }else{
-            textViewLibretto.setText("Libretto esami");
+            //textViewLibretto.setText("Libretto esami");
             textViewMsg.setVisibility(View.GONE);
         }
         librettoLista = view.findViewById(R.id.librettoLista);
