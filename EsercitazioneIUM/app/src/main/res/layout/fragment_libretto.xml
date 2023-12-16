@@ -40,11 +40,11 @@
             android:layout_below="@+id/textViewLibretto"
             android:layout_marginEnd="10dp"
             android:layout_marginStart="10dp"
-            android:layout_above="@+id/aggiungiEsame"
+            android:layout_above="@+id/buttonAggiungiEsame"
             android:scrollbars="none"
             />
 
-        <Button
+<!--        <Button
         android:id="@+id/aggiungiEsame"
             android:layout_width="230dp"
             android:layout_height="50dp"
@@ -57,35 +57,41 @@
             android:layout_alignParentEnd="true"
             android:backgroundTint="@color/primary"
 
+            />-->
+        <ImageButton
+            android:id="@+id/buttonAggiungiEsame"
+            android:layout_width="190dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/corner_button"
+            android:text="@string/login"
+            android:textColor="@color/text"
+            android:textSize="26sp"
+            android:layout_above="@id/spacer"
+            />
+        <TextView
+            android:layout_width="190dp"
+            android:layout_height="50dp"
+            android:text="Aggiungi esame"
+            android:textColor="@color/text"
+            android:textSize="23sp"
+            android:textAlignment="center"
+            android:layout_above="@id/spacer"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:layout_marginEnd="5dp"
+
+
+
+            />
+        <Space
+            android:id="@+id/spacer"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_alignParentBottom="true"
             />
     </RelativeLayout>
 
-
-<!--
-    <Button
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:text="Aggiungi esame"
-        android:textSize="20sp"
-
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/aggiungiEsame"
-            android:layout_width="230dp"
-            android:layout_height="50dp"
-            android:text="Aggiungi esame"
-            android:textSize="20sp"
-            android:drawableEnd="@drawable/baseline_add_24"
-        />
-    </LinearLayout>
-    -->
 </FrameLayout>

@@ -26,7 +26,7 @@ public class LibrettoFragment extends Fragment {
 
     private Button aggiungiEsame;
     private ListView librettoLista;
-    private ImageButton buttonDelete;
+    private ImageButton buttonDelete,buttonAggiungiEsame;
     ArrayList<Esame> esami;
     ArrayAdapter<Esame> adapter;
 
@@ -39,7 +39,8 @@ public class LibrettoFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_libretto, container, false);
 
-        aggiungiEsame = view.findViewById(R.id.aggiungiEsame);
+//        aggiungiEsame = view.findViewById(R.id.aggiungiEsame);
+        buttonAggiungiEsame = view.findViewById(R.id.buttonAggiungiEsame);
         textViewMsg = view.findViewById(R.id.textViewMsg);
         textViewLibretto = view.findViewById(R.id.textViewLibretto);
 
@@ -67,7 +68,7 @@ public class LibrettoFragment extends Fragment {
         adapter.setUtente(utente);
         librettoLista.setAdapter(adapter);
 
-        aggiungiEsame.setOnClickListener(new View.OnClickListener() {
+        buttonAggiungiEsame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), AggiungiEsameActivity.class);
