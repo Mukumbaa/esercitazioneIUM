@@ -6,77 +6,119 @@
     android:layout_height="match_parent"
     tools:context=".RegistrazioneActivity"
     android:orientation="vertical"
+    android:fillViewport="true"
     android:background="@color/background"
     >
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_gravity="center">
+        >
 
 
         <TextView
             android:id="@+id/messaggio"
-            android:layout_width="210dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/text"
             android:textSize="26sp"
-            android:text="Eliminare il seguente esame?"
+            android:text="Eliminare questo esame?"
+            android:layout_above="@id/riepilogoEsame"
             android:textAlignment="center"
-            android:layout_gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginBottom="50dp"
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="16dp">
-        </Space>
+            />
 
-        <TextView
+        <RelativeLayout
             android:id="@+id/riepilogoEsame"
-            android:layout_width="336dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="190dp"
+            android:background="@drawable/libretto_box"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+
+            >
+
+            <TextView
+                android:id="@+id/textViewNomeEsame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Analisi"
+                android:textColor="@color/text"
+                android:textSize="23dp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:id="@+id/textViewVoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="30"
+                android:textColor="@color/text"
+                android:textSize="25dp"
+                android:textAlignment="center"
+                android:layout_below="@id/textViewNomeEsame"
+
+                />
+            <TextView
+                android:id="@+id/textViewCfu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="9 CFU"
+                android:textColor="@color/text"
+                android:textSize="15dp"
+                android:layout_below="@id/textViewVoto"
+                android:textAlignment="center"
+                android:layout_marginBottom="10dp"
+
+                />
+
+        </RelativeLayout>
+        <ImageButton
+            android:id="@+id/buttonEliminaEsame"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
-            android:textAlignment="center"
-            android:textColor="@color/text"
-            android:textSize="30sp" />
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="25dp">
-        </Space>
-        <Button
-            android:id="@+id/buttonConfermaEliminazione"
+            android:background="@drawable/corner_button"
+            android:gravity="center"
+            android:layout_marginTop="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/riepilogoEsame"
+            >
+        </ImageButton>
+        <TextView
             android:layout_width="225dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="Elimina"
-            android:textAlignment="center"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/primary"
             android:textColor="@color/text"
-            android:textSize="26sp">
-        </Button>
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="16dp">
-        </Space>
-        <Button
-            android:id="@+id/buttonTornaIndietro"
-            android:layout_width="225dp"
-            android:layout_height="wrap_content"
-            android:text="Indietro"
+            android:textSize="26dp"
             android:textAlignment="center"
+            android:layout_below="@id/riepilogoEsame"
             android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            />
+        <ImageButton
+            android:id="@+id/buttonIndietro"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
-            android:backgroundTint="@color/secondary"
-            android:textColor="@color/text"
-            android:textSize="26sp">
-        </Button>
+            android:background="@drawable/libretto_box"
+            android:src="@drawable/arrow_right"
+            android:rotation="180"
+            android:layout_below="@id/buttonEliminaEsame"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerCrop"
+            app:tint="@color/text"
+            >
+        </ImageButton>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 

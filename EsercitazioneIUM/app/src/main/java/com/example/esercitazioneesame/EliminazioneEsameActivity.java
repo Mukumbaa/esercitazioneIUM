@@ -7,15 +7,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.android.material.badge.BadgeUtils;
 
 public class EliminazioneEsameActivity extends AppCompatActivity {
-    private Button buttonConfermaEliminazione;
-    private Button buttonTornaIndietro;
+    private ImageButton buttonEliminaEsame,buttonIndietro;
 
-    private TextView riepilogoEsame;
+    private TextView textViewNomeEsame,textViewVoto,textViewCfu;
 
 
     @Override
@@ -23,10 +23,11 @@ public class EliminazioneEsameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eliminazione_esame);
 
-        buttonConfermaEliminazione = findViewById(R.id.buttonConfermaEliminazione);
-        buttonTornaIndietro = findViewById(R.id.buttonTornaIndietro);
-        riepilogoEsame = findViewById(R.id.riepilogoEsame);
-
+        buttonEliminaEsame = findViewById(R.id.buttonEliminaEsame);
+        buttonIndietro = findViewById(R.id.buttonIndietro);
+        textViewNomeEsame = findViewById(R.id.textViewNomeEsame);
+        textViewVoto = findViewById(R.id.textViewVoto);
+        textViewCfu = findViewById(R.id.textViewCfu);
 
 
         Intent precedenteIntent = getIntent();
@@ -34,9 +35,12 @@ public class EliminazioneEsameActivity extends AppCompatActivity {
         Esame esame = (Esame) precedenteIntent.getSerializableExtra("esame");
         Persona utente = (Persona) precedenteIntent.getSerializableExtra("utente");
         int posizioneEsame = precedenteIntent.getIntExtra("posizione",0);
-//        Log.d("utente",utente.getNome()+utente.getCognome());
-        riepilogoEsame.setText("Nome Esame: "+esame.getNomeEsame()+"\nVoto: "+esame.getVoto()+"\nCFU: "+esame.getCfu());
-        buttonConfermaEliminazione.setOnClickListener(new View.OnClickListener() {
+
+        textViewNomeEsame.setText(utente.getLibretto().get(posizioneEsame).getNomeEsame());
+        textViewVoto.setText(String.valueOf(utente.getLibretto().get(posizioneEsame).getVoto()));
+        textViewCfu.setText(String.valueOf(utente.getLibretto().get(posizioneEsame).getCfu())+" CFU");
+
+        buttonEliminaEsame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 utente.eliminaEsame(posizioneEsame);
@@ -48,7 +52,7 @@ public class EliminazioneEsameActivity extends AppCompatActivity {
                 finish();
             }
         });
-        buttonTornaIndietro.setOnClickListener(new View.OnClickListener() {
+        buttonIndietro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(EliminazioneEsameActivity.this, HomeActivity.class);

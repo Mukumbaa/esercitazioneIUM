@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 
 public class EsameAggiungiActivity extends AppCompatActivity {
 
-    private ImageButton buttonAggiungiEsame,buttonTornaIndietro;
+    private ImageButton buttonAggiungiEsame,buttonIndietro;
     private Persona utente;
     private EditText editTextNomeEsame;
     private EditText editTextVoto;
@@ -30,7 +30,7 @@ public class EsameAggiungiActivity extends AppCompatActivity {
         editTextNomeEsame = findViewById(R.id.editTextNomeEsame);
         editTextVoto = findViewById(R.id.editTextVoto);
         editTextCfu = findViewById(R.id.editTextCfu);
-
+        buttonIndietro = findViewById(R.id.buttonIndietro);
 
         buttonAggiungiEsame.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,16 +46,16 @@ public class EsameAggiungiActivity extends AppCompatActivity {
                 finish();
             }
         });
-//        buttonTornaIndietro.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(EsameAggiungiActivity.this, HomeActivity.class);
-//                intent.putExtra("fragment","libretto");
-//                intent.putExtra("utente",utente);
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
+        buttonIndietro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(EsameAggiungiActivity.this, HomeActivity.class);
+                intent.putExtra("fragment","libretto");
+                intent.putExtra("utente",utente);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
     }
