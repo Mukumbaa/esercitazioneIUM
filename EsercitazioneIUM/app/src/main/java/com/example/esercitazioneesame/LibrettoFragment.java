@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,9 +25,8 @@ public class LibrettoFragment extends Fragment {
     private TextView textViewMsg;
     private TextView textViewLibretto;
 
-    private Button aggiungiEsame;
     private ListView librettoLista;
-    private ImageButton buttonDelete,buttonAggiungiEsame;
+    private ImageButton buttonAggiungiEsame;
     ArrayList<Esame> esami;
     ArrayAdapter<Esame> adapter;
 
@@ -39,10 +39,12 @@ public class LibrettoFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_libretto, container, false);
 
-//        aggiungiEsame = view.findViewById(R.id.aggiungiEsame);
         buttonAggiungiEsame = view.findViewById(R.id.buttonAggiungiEsame);
         textViewMsg = view.findViewById(R.id.textViewMsg);
         textViewLibretto = view.findViewById(R.id.textViewLibretto);
+        Log.d("SIUM", "buttonAggiungiEsame: " + buttonAggiungiEsame);
+        Log.d("SIUM", utente.getNome());
+
 
         if (utente.getLibretto().size() == 0){
             textViewMsg.setText("Nessun voto registrato");
@@ -56,6 +58,18 @@ public class LibrettoFragment extends Fragment {
         librettoLista.setDividerHeight(50);
         esami = utente.getLibretto();
 
+        buttonAggiungiEsame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("SIUM", "dentro");
+                Intent intent = new Intent(getActivity(), EsameAggiungiActivity.class);
+                intent.putExtra("utente",utente);
+                Log.d("SIUM", ""+intent);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        });
+
         librettoLista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -68,15 +82,7 @@ public class LibrettoFragment extends Fragment {
         adapter.setUtente(utente);
         librettoLista.setAdapter(adapter);
 
-        buttonAggiungiEsame.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), AggiungiEsameActivity.class);
-                intent.putExtra("utente",utente);
-                startActivity(intent);
-                getActivity().finish();
-            }
-        });
+
 
 
 

@@ -63,20 +63,7 @@
             android:scrollbars="none"
             />
 
-<!--        <Button
-        android:id="@+id/aggiungiEsame"
-            android:layout_width="230dp"
-            android:layout_height="50dp"
-            android:text="Aggiungi esame"
-            android:textColor="@color/text"
-            android:textSize="20sp"
-            android:drawableEnd="@drawable/baseline_add_24"
-            android:drawableTint="@color/text"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:backgroundTint="@color/primary"
 
-            />-->
         <ImageButton
             android:id="@+id/buttonAggiungiEsame"
             android:layout_width="203dp"
@@ -85,9 +72,6 @@
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
             android:background="@drawable/corner_button"
-            android:text="@string/login"
-            android:textColor="@color/text"
-            android:textSize="26sp"
             android:layout_above="@id/spacer"
             />
         <TextView

@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextMatricola,editTextPassword;
     private TextView registrati;
     public Persona utente;
-    private Button /*buttonLogin,*/buttonHidePassword;
+    private Button buttonHidePassword;
     private ImageButton buttonLogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
         buttonHidePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

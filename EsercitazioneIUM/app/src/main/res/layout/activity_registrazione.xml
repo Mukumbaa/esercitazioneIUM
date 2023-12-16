@@ -99,14 +99,14 @@
             android:drawableStart="@drawable/calendar"
             android:drawablePadding="15dp"
             android:drawableTint="@color/text"
-            android:hint="Data di Nascita"
 
+            android:hint="Data di Nascita"
             android:maxLength="20"
             android:paddingStart="10dp"
             android:textAlignment="gravity"
             android:textColor="@color/text"
-            android:textColorHint="@color/hint"
 
+            android:textColorHint="@color/hint"
             android:textSize="20sp" />
 
         <EditText
