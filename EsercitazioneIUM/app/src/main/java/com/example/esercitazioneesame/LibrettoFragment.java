@@ -78,20 +78,9 @@ public class LibrettoFragment extends Fragment {
         });
 
         // Aggiungi altri esami secondo necessità
-        CustomAdapter adapter = new CustomAdapter(getContext(), esami,utente);
+        CustomAdapter adapter = new CustomAdapter(getContext(), esami, utente);
         adapter.setUtente(utente);
         librettoLista.setAdapter(adapter);
-
-
-
-
-
-
-
-
-
-
-
 
         return view;
     }

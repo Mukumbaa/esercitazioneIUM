@@ -58,10 +58,6 @@ public class CustomAdapter extends BaseAdapter {
         ImageButton buttonElimina = convertView.findViewById(R.id.buttonElimina);
         ImageButton buttonModifica = convertView.findViewById(R.id.buttonModifica);
 
-
-
-
-
         Esame esame = data.get(position);
         textViewNomeEsame.setText(esame.getNomeEsame());
         textViewVoto.setText(String.valueOf(esame.getVoto()));

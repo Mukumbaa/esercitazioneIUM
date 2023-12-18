@@ -7,15 +7,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class MessaggioFineRegistrazione extends AppCompatActivity {
-    private Button buttonTornaAlLoginConfermaRegistrazione;
+
+public class MessaggioRegistrationeActivity extends AppCompatActivity {
+    private ImageButton buttonTornaAlLoginConfermaRegistrazione;
     private TextView messaggio;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_messaggio_fine_registrazione);
+        setContentView(R.layout.activity_messaggio_registratione);
+
+
 
         messaggio = findViewById(R.id.messaggio);
         Intent precedenteIntent = getIntent();
@@ -36,7 +40,7 @@ public class MessaggioFineRegistrazione extends AppCompatActivity {
         buttonTornaAlLoginConfermaRegistrazione.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MessaggioFineRegistrazione.this, MainActivity.class);
+                Intent intent = new Intent(MessaggioRegistrationeActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 finish(); // Chiudi la terza Activity
@@ -49,5 +53,12 @@ public class MessaggioFineRegistrazione extends AppCompatActivity {
             }
         };
         getOnBackPressedDispatcher().addCallback(this, callback);
+
+
+
+
+
+
+
     }
 }

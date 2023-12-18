@@ -21,24 +21,9 @@ public class Persona implements Serializable {
     private Boolean esistenza;
     private int ID;
     private ArrayList<Esame> libretto =  new ArrayList<>();
-//            =
-//            new ArrayList<>(Arrays.asList(
-//            new Esame(30,"Analisi 1",9),
-//            new Esame(26,"Programmazione 1",12),
-//            new Esame(18,"ALF",6),
-//            new Esame(21,"EDI",6),
-//            new Esame(30,"Calcolo e metodo scientifico",9),
-//            new Esame(30,"nome lunghissimissimissimo incredibile gigante",9),
-//            new Esame(30,"Analisi 1",9),
-//            new Esame(26,"Programmazione 1",12),
-//            new Esame(18,"ALF",6),
-//            new Esame(21,"EDI",6),
-//            new Esame(30,"Calcolo e metodo scientifico",9)
-//
-//    ));
 
     private static ArrayList<Persona> persone = new ArrayList<>(Arrays.asList(
-            new Persona("Gabriele","Lippolis","66137","password","06/12/2002",true),
+            new Persona("Gabriele","Lippolis","66137","password","06/12/02",true),
             new Persona("Edoardo","Lippolis","66138","password","21/11/2012",true),
             new Persona("Vito","Lippolis","66139","password","10/02/1966",true),
             new Persona("Silvia","Garau","66140","password","08/12/1973",true)
@@ -103,7 +88,7 @@ public class Persona implements Serializable {
     }
     public boolean checkUtenteEsistente(){
         for (Persona persona : Persona.persone) {
-            if (persona.getNome().equals(this.getNome()) && persona.getCognome().equals(this.getCognome()) && persona.getPassword().equals(this.getPassword()) && persona.getDataNascita().equals(this.getDataNascita()))
+            if (persona.getMatricola().equals(this.getMatricola()) && persona.getNome().equals(this.getNome()) && persona.getCognome().equals(this.getCognome()) && persona.getDataNascita().equals(this.getDataNascita()))
             {
                 return true;
             }

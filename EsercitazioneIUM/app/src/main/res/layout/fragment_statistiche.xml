@@ -95,7 +95,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Media"
+            android:text="Media aritmetica"
             android:textAlignment="center"
             android:textSize="28sp"
             android:textColor="@color/text"

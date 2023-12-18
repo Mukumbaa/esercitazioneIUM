@@ -155,7 +155,7 @@ public class RegistrazioneActivity extends AppCompatActivity {
                 if(!emptyFlag){
                     Persona utenteNuovo = new Persona(nome,cognome,matricola,password,dataNascita,true);
 
-                    Intent intent = new Intent(RegistrazioneActivity.this, MessaggioFineRegistrazione.class);
+                    Intent intent = new Intent(RegistrazioneActivity.this, MessaggioRegistrationeActivity.class);
 
                     if (utenteNuovo.checkUtenteEsistente()){
                         intent.putExtra("messaggio","Utente già registrato");
