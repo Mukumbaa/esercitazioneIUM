@@ -3,18 +3,20 @@ package com.example.esercitazioneesame;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class ModificaEsameActivity extends AppCompatActivity {
 
-    private EditText editTextNomeEsameM,editTextVotoM,editTextCfuM;
-    private Button buttonConfermaModifica,buttonTornaIndietroM;
+    private EditText editTextNomeEsame,editTextVoto,editTextCfu;
+    private ImageButton buttonConfermaModifica,buttonIndietro;
 
 
 
@@ -25,11 +27,11 @@ public class ModificaEsameActivity extends AppCompatActivity {
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
-        editTextNomeEsameM = findViewById(R.id.editTextNomeEsameM);
-        editTextVotoM = findViewById(R.id.editTextVotoM);
-        editTextCfuM = findViewById(R.id.editTextCfuM);
+        editTextNomeEsame = findViewById(R.id.editTextNomeEsame);
+        editTextVoto = findViewById(R.id.editTextVoto);
+        editTextCfu = findViewById(R.id.editTextCfu);
         buttonConfermaModifica = findViewById(R.id.buttonConfermaModifica);
-        buttonTornaIndietroM = findViewById(R.id.buttonTornaIndietroM);
+        buttonIndietro = findViewById(R.id.buttonIndietro);
 
         Intent precedenteIntent = getIntent();
 
@@ -38,9 +40,9 @@ public class ModificaEsameActivity extends AppCompatActivity {
         int posizioneEsame = precedenteIntent.getIntExtra("posizione",0);
         Log.d("SIUM",esame.getNomeEsame()+esame.getVoto()+esame.getCfu());
 
-        editTextNomeEsameM.setHint(esame.getNomeEsame());
-        editTextVotoM.setHint(String.valueOf(esame.getVoto()));
-        editTextCfuM.setHint(String.valueOf(esame.getCfu()));
+        editTextNomeEsame.setHint(esame.getNomeEsame());
+        editTextVoto.setHint(String.valueOf(esame.getVoto()));
+        editTextCfu.setHint(String.valueOf(esame.getCfu()));
 
 
 
@@ -48,9 +50,9 @@ public class ModificaEsameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String nomeEsame = editTextNomeEsameM.getText().toString();
-                String voto = editTextVotoM.getText().toString();
-                String cfu = editTextCfuM.getText().toString();
+                String nomeEsame = editTextNomeEsame.getText().toString();
+                String voto = editTextVoto.getText().toString();
+                String cfu = editTextCfu.getText().toString();
 
                 Esame e = new Esame(
                         voto.equals("") ? esame.getVoto() : Integer.parseInt(voto),
@@ -66,7 +68,7 @@ public class ModificaEsameActivity extends AppCompatActivity {
                 finish();
             }
         });
-        buttonTornaIndietroM.setOnClickListener(new View.OnClickListener() {
+        buttonIndietro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ModificaEsameActivity.this, HomeActivity.class);
