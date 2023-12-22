@@ -135,13 +135,7 @@
                 android:layout_marginTop="45dp"
                 android:layout_marginBottom="10dp"
                 />
-            <ImageView
-                android:layout_width="26dp"
-                android:layout_height="26dp"
-                android:src="@drawable/arrow_right"
-                android:layout_gravity="center|end"
-                android:layout_marginEnd="17dp"
-                app:tint="#38E3FD" />
+
         </FrameLayout>
         <FrameLayout
             android:id="@+id/frameCognome"
@@ -174,13 +168,7 @@
                 android:layout_marginTop="45dp"
                 android:layout_marginBottom="10dp"
                 />
-            <ImageView
-                android:layout_width="26dp"
-                android:layout_height="26dp"
-                android:src="@drawable/arrow_right"
-                android:layout_gravity="center|end"
-                android:layout_marginEnd="17dp"
-                app:tint="#38E3FD" />
+
         </FrameLayout>
         <FrameLayout
             android:id="@+id/frameDataNascita"
@@ -213,52 +201,40 @@
                 android:layout_marginTop="45dp"
                 android:layout_marginBottom="10dp"
                 />
-            <ImageView
-                android:layout_width="26dp"
-                android:layout_height="26dp"
-                android:src="@drawable/arrow_right"
-                android:layout_gravity="center|end"
-                android:layout_marginEnd="17dp"
-                app:tint="#38E3FD" />
+
         </FrameLayout>
+
         <FrameLayout
             android:id="@+id/frameMatricola"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/corner_box"
             android:layout_below="@id/frameDataNascita"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
-            >
+            android:background="@drawable/corner_box">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Matricola"
-                android:textSize="23dp"
-                android:textColor="@color/text"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
-                />
+                android:text="Matricola"
+                android:textColor="@color/text"
+                android:textSize="23dp" />
+
             <TextView
                 android:id="@+id/textViewMatricola"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="66137"
-                android:textSize="20dp"
-                android:textColor="#A6E4E5EB"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="45dp"
                 android:layout_marginBottom="10dp"
-                />
-            <ImageView
-                android:layout_width="26dp"
-                android:layout_height="26dp"
-                android:src="@drawable/arrow_right"
-                android:layout_gravity="center|end"
-                android:layout_marginEnd="17dp"
-                app:tint="#38E3FD" />
+                android:text="66137"
+                android:textColor="#A6E4E5EB"
+                android:textSize="20dp" />
+
         </FrameLayout>
         <FrameLayout
             android:id="@+id/framePassword"
@@ -292,12 +268,14 @@
                 android:layout_marginBottom="10dp"
                 />
             <ImageView
+                android:id="@+id/imagePassword"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:src="@drawable/arrow_right"
+                android:src="@drawable/show"
                 android:layout_gravity="center|end"
                 android:layout_marginEnd="17dp"
-                app:tint="#38E3FD" />
+                app:tint="#38E3FD"
+                />
         </FrameLayout>
         <FrameLayout
             android:id="@+id/frameEliminaAccount"

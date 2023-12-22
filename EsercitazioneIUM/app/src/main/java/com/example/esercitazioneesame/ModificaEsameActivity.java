@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class ModificaEsameActivity extends AppCompatActivity {
 
@@ -57,7 +58,7 @@ public class ModificaEsameActivity extends AppCompatActivity {
                         cfu.equals("") ? esame.getCfu() : Integer.parseInt(cfu)
                 );
 
-                utente.modificaEsame(e,posizioneEsame);
+                utente.modificaEsame(posizioneEsame,e);
                 Intent intent = new Intent(ModificaEsameActivity.this, HomeActivity.class);
                 intent.putExtra("fragment","libretto");
                 intent.putExtra("utente",utente);

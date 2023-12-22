@@ -64,7 +64,6 @@ public class LibrettoFragment extends Fragment {
                 Log.d("SIUM", "dentro");
                 Intent intent = new Intent(getActivity(), EsameAggiungiActivity.class);
                 intent.putExtra("utente",utente);
-                Log.d("SIUM", ""+intent);
                 startActivity(intent);
                 getActivity().finish();
             }

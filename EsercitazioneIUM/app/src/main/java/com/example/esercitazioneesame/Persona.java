@@ -116,7 +116,7 @@ public class Persona implements Serializable {
     public void eliminaEsame(int pos){
         libretto.remove(pos);
     }
-    public void modificaEsame(Esame e, int posizione){
+    public void modificaEsame(int posizione,Esame e){
         libretto.set(posizione,e);
     }
     public double getMedia(){
@@ -150,5 +150,12 @@ public class Persona implements Serializable {
     }
     public void setLibretto(ArrayList<Esame> l){
         this.libretto = l;
+    }
+    public static void eliminaUtente(Persona utente){
+        for (int i = 0; i<persone.size(); i++){
+            if(persone.get(i).getMatricola().equals(utente.getMatricola())){
+                persone.remove(i);
+            }
+        }
     }
 }
