@@ -66,18 +66,15 @@ public class CustomAdapter extends BaseAdapter {
         buttonElimina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(buttonElimina.getContext(), String.valueOf(position), Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(context, EliminazioneEsameActivity.class);
 
                 intent.putExtra("utente",utente);
-                intent.putExtra("esame", esame);
                 intent.putExtra("posizione",position);
 
 
                 context.startActivity(intent);
 
-                // Chiude l'Activity corrente
                 ((Activity) context).finish();
             }
         });
@@ -93,7 +90,6 @@ public class CustomAdapter extends BaseAdapter {
                 Log.d("SIUM","ciao");
                 context.startActivity(intent);
 
-                // Chiude l'Activity corrente
                 ((Activity) context).finish();
             }
         });

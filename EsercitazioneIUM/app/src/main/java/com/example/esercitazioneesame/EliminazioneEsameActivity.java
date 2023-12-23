@@ -32,7 +32,7 @@ public class EliminazioneEsameActivity extends AppCompatActivity {
 
         Intent precedenteIntent = getIntent();
 
-        Esame esame = (Esame) precedenteIntent.getSerializableExtra("esame");
+        //Esame esame = (Esame) precedenteIntent.getSerializableExtra("esame");
         Persona utente = (Persona) precedenteIntent.getSerializableExtra("utente");
         int posizioneEsame = precedenteIntent.getIntExtra("posizione",0);
 
@@ -44,7 +44,6 @@ public class EliminazioneEsameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 utente.eliminaEsame(posizioneEsame);
-//                Log.d("SIUM","qui");
                 Intent intent = new Intent(EliminazioneEsameActivity.this, HomeActivity.class);
                 intent.putExtra("fragment","libretto");
                 intent.putExtra("utente",utente);
