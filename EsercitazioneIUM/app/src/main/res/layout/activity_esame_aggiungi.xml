@@ -44,24 +44,24 @@
             android:layout_centerInParent="true"
             android:layout_above="@+id/editTextVoto"
             />
+
         <EditText
             android:id="@+id/editTextVoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/editTextCfu"
+            android:layout_centerInParent="true"
             android:layout_marginStart="60dp"
             android:layout_marginEnd="60dp"
+            android:layout_marginBottom="16dp"
             android:hint="Voto"
+            android:inputType="number"
+            android:maxLength="20"
             android:paddingStart="10dp"
             android:textAlignment="gravity"
             android:textColor="@color/text"
             android:textColorHint="@color/hint"
-            android:textSize="20sp"
-            android:layout_marginBottom="16dp"
-            android:maxLength="20"
-            android:layout_centerInParent="true"
-            android:layout_above="@+id/editTextCfu"
-            android:inputType="number"
-            />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/editTextCfu"
@@ -75,6 +75,7 @@
             android:maxLength="20"
             android:paddingStart="10dp"
             android:textAlignment="gravity"
+
             android:textColor="@color/text"
             android:textColorHint="@color/hint"
             android:textSize="20sp"

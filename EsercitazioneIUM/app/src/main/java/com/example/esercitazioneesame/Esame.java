@@ -10,7 +10,7 @@ public class Esame implements Serializable {
     private String nomeEsame;
     private int cfu;
 
-    public Esame(int voto,String nomeEsame,int cfu){
+    public Esame(String nomeEsame,int voto,int cfu){
         this.voto = voto;
         this.nomeEsame = nomeEsame;
         this.cfu = cfu;

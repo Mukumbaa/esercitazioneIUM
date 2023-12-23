@@ -105,19 +105,24 @@ public class MainActivity extends AppCompatActivity {
                         //intent.putExtra("NomeUtente",utente.getNome());
                         if (utente.getNome().equals("Gabriele")){
                             utente.setLibretto(new ArrayList<>(Arrays.asList(
-                                    new Esame(30,"Analisi 1",9),
-                                    new Esame(26,"Programmazione 1",12),
-                                    new Esame(18,"ALF",6),
-                                    new Esame(21,"EDI",6),
-                                    new Esame(30,"Calcolo e metodo scientifico",9),
-                                    new Esame(30,"nome lunghissimissimissimo incredibile gigante",9),
-                                    new Esame(30,"Analisi 1",9),
-                                    new Esame(26,"Programmazione 1",12),
-                                    new Esame(18,"ALF",6),
-                                    new Esame(21,"EDI",6),
-                                    new Esame(30,"Calcolo e metodo scientifico",9)
+                                    new Esame("Algoritmi e strutture dati",25,9),
+                                    new Esame("Analisi matematica",27,9),
+                                    new Esame("Architettura degli elaboratori",30,6),
+                                    new Esame("Fisica e metodo scientifico",25,6),
+                                    new Esame("Fondamenti di informatica",25,6),
+                                    new Esame("Matematica discreta",28,9),
+                                    new Esame("Programmazione 1",26,12),
+                                    new Esame("Automi e linguaggi formali",18,6),
+                                    new Esame("Colcolo scientifico e metodi numerici",29,6),
+                                    new Esame("Dati e modelli",30,6),
+                                    new Esame("Elementi di economia e diritto per informatici",21,6),
+                                    new Esame("Fondamenti di programmazione web",29,6),
+                                    new Esame("Programmazione 2",30,9),
+                                    new Esame("Reti di calcolatori",28,9),
+                                    new Esame("Sistemi operativi",23,12)
 
-                            )));
+
+                                    )));
                         }
                         intent.putExtra("utente",utente);
                         intent.putExtra("fragment","home");

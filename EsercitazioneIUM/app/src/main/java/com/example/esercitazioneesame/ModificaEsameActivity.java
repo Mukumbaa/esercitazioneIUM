@@ -41,8 +41,8 @@ public class ModificaEsameActivity extends AppCompatActivity {
         Log.d("SIUM",esame.getNomeEsame()+esame.getVoto()+esame.getCfu());
 
         editTextNomeEsame.setHint(esame.getNomeEsame());
-        editTextVoto.setHint(String.valueOf(esame.getVoto()));
-        editTextCfu.setHint(String.valueOf(esame.getCfu()));
+        editTextVoto.setHint(esame.getVoto() + " [Voto]");
+        editTextCfu.setHint(esame.getCfu() + " [CFU]");
 
 
 
@@ -55,8 +55,8 @@ public class ModificaEsameActivity extends AppCompatActivity {
                 String cfu = editTextCfu.getText().toString();
 
                 Esame e = new Esame(
-                        voto.equals("") ? esame.getVoto() : Integer.parseInt(voto),
                         nomeEsame.equals("") ? esame.getNomeEsame() : nomeEsame,
+                        voto.equals("") ? esame.getVoto() : Integer.parseInt(voto),
                         cfu.equals("") ? esame.getCfu() : Integer.parseInt(cfu)
                 );
 

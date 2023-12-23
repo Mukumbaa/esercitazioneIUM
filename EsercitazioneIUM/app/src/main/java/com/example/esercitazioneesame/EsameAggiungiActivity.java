@@ -36,7 +36,7 @@ public class EsameAggiungiActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //aggiungo l'esame al libretto dell'utente
-                utente.addEsame(new Esame(Integer.parseInt(editTextVoto.getText().toString()),editTextNomeEsame.getText().toString(),Integer.parseInt(editTextCfu.getText().toString())));
+                utente.addEsame(new Esame(editTextNomeEsame.getText().toString(),Integer.parseInt(editTextVoto.getText().toString()),Integer.parseInt(editTextCfu.getText().toString())));
                 //rivado alla pagina del libretto
                 Intent intent = new Intent(EsameAggiungiActivity.this, HomeActivity.class);
                 //Log.d("AggiungiEsame",utente.getLibretto().get(0).getNomeEsame());

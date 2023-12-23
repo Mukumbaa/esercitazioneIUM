@@ -38,7 +38,7 @@ public class EliminazioneEsameActivity extends AppCompatActivity {
 
         textViewNomeEsame.setText(utente.getLibretto().get(posizioneEsame).getNomeEsame());
         textViewVoto.setText(String.valueOf(utente.getLibretto().get(posizioneEsame).getVoto()));
-        textViewCfu.setText(String.valueOf(utente.getLibretto().get(posizioneEsame).getCfu())+" CFU");
+        textViewCfu.setText(utente.getLibretto().get(posizioneEsame).getCfu() +" CFU");
 
         buttonEliminaEsame.setOnClickListener(new View.OnClickListener() {
             @Override
