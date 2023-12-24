@@ -36,5 +36,12 @@ public class Esame implements Serializable {
     }
 
 
-
+    @Override
+    public String toString() {
+        return "Esame{" +
+                "nome='" + nomeEsame + '\'' +
+                ", voto=" + voto +
+                ", cfu=" + cfu +
+                '}';
+    }
 }

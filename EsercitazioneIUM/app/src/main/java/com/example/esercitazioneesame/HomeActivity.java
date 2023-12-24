@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.util.Log;
 import android.view.Window;
 
 import android.content.Intent;
@@ -46,6 +47,8 @@ public class HomeActivity extends AppCompatActivity {
         StatisticheFragment.addUtente(utente);
 
         bottomNavigationView = findViewById(R.id.bottomNavigation);
+
+        Persona.LetturaPersona();
 
         //getSupportFragmentManager().beginTransaction().replace(R.id.conteiner,homeFragment).commit();
 

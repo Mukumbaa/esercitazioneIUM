@@ -2,6 +2,11 @@ package com.example.esercitazioneesame;
 
 import android.util.Log;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -158,4 +163,31 @@ public class Persona implements Serializable {
             }
         }
     }
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nome='" + nome + '\'' +
+                ", cognome='" + cognome + '\'' +
+                ", dataNascita='" + dataNascita + '\'' +
+                ", matricola='" + matricola + '\'' +
+                ", password='" + password + '\'' +
+                ", elencoEsami=" + libretto +
+                '}';
+    }
+    public static void LetturaPersona() {
+        try (BufferedReader br = new BufferedReader(new FileReader("persona.txt"))) {
+            // Leggi la stringa dal file
+            String linea;
+            StringBuilder contenuto = new StringBuilder();
+            while ((linea = br.readLine()) != null) {
+                contenuto.append(linea).append("\n");
+            }
+
+            // Stampa la stringa letta
+            Log.d("PROVA",contenuto.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
