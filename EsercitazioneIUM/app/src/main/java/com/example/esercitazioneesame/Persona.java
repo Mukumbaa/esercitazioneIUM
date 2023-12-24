@@ -1,11 +1,14 @@
 package com.example.esercitazioneesame;
 
+import android.content.Context;
 import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.Arrays;
@@ -13,6 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.ArrayList;
+
 
 
 public class Persona implements Serializable {
@@ -24,7 +28,6 @@ public class Persona implements Serializable {
     private String password;
     private String dataNascita;
     private Boolean esistenza;
-    private int ID;
     private ArrayList<Esame> libretto =  new ArrayList<>();
 
     private static ArrayList<Persona> persone = new ArrayList<>(Arrays.asList(
@@ -174,20 +177,71 @@ public class Persona implements Serializable {
                 ", elencoEsami=" + libretto +
                 '}';
     }
-    public static void LetturaPersona() {
-        try (BufferedReader br = new BufferedReader(new FileReader("persona.txt"))) {
-            // Leggi la stringa dal file
-            String linea;
-            StringBuilder contenuto = new StringBuilder();
-            while ((linea = br.readLine()) != null) {
-                contenuto.append(linea).append("\n");
-            }
+    public static Persona fromString(String data) {
+        String[] parts = data.split(", ");
+        String nome = parts[0].substring(parts[0].indexOf('=') + 1).replace("'","");
+        String cognome = parts[1].substring(parts[1].indexOf('=') + 1).replace("'","");
+        String dataNascita = parts[2].substring(parts[2].indexOf('=') + 1).replace("'","");
+        String matricola = parts[3].substring(parts[3].indexOf('=') + 1).replace("'","");
+        String password = parts[4].substring(parts[4].indexOf('=') + 1).replace("'","");
 
-            // Stampa la stringa letta
-            Log.d("PROVA",contenuto.toString());
+
+        // Considera anche la gestione dell'elenco degli esami, potresti usare altre suddivisioni del formato.
+
+        return new Persona(nome, cognome, matricola, password, dataNascita, true);
+    }
+    public void savePersona(Context context){
+        try {
+            String content = this.toString();
+            FileOutputStream fos = context.openFileOutput(this.getMatricola()+".txt", Context.MODE_PRIVATE);
+            fos.write(content.getBytes());
+            fos.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public static Persona readPersona(Context context,String nomeFile){
+
+        String content = "";
+
+        try {
+            FileInputStream fis = context.openFileInput(nomeFile);
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                sb.append(line);
+            }
+            content = sb.toString();
+            fis.close();
+
+            Log.d("PROVA",Persona.fromString(content).toString()+"SIUM");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Persona persona = Persona.fromString(content);
+
+        // Recupera l'elenco degli esami dalla stringa e crea gli oggetti Esame
+        String esamiString = content.substring(content.indexOf("[") + 1, content.lastIndexOf("]"));
+        String[] esamiArray = esamiString.split(", ");
+        for (int i = 0;i<esamiArray.length;i+=3){
+            persona.addEsame(
+                Esame.fromString(esamiArray[i],esamiArray[i+1],esamiArray[i+2])
+            );
+        }
+        Log.d("PROVAA",persona.toString());
+        /*
+Persona{nome='Gabriele',
+cognome='Lippolis',
+dataNascita='06/12/02',
+matricola='66137', password='password',
+elencoEsami=[
+Esame{nome='Algoritmi e strutture dati',voto=25, cfu=9}, Esame{nome='Analisi matematica',voto=27, cfu=9}, Esame{nome='Architettura degli elaboratori', voto=30, cfu=6}, Esame{nome='Fisica e metodo scientifico', voto=25, cfu=6}, Esame{nome='Fondamenti di informatica', voto=25, cfu=6}, Esame{nome='Matematica discreta', voto=28, cfu=9}, Esame{nome='Programmazione 1', voto=26, cfu=12}, Esame{nome='Automi e linguaggi formali', voto=18, cfu=6}, Esame{nome='Colcolo scientifico e metodi numerici', voto=29, cfu=6}, Esame{nome='Dati e modelli', voto=30, cfu=6}, Esame{nome='Elementi di economia e diritto per informatici', voto=21, cfu=6}, Esame{nome='Fondamenti di programmazione web', voto=29, cfu=6}, Esame{nome='Programmazione 2', voto=30, cfu=9}, Esame{nome='Reti di calcolatori', voto=28, cfu=9}, Esame{nome='Sistemi operativi', voto=23, cfu=12}]}
+*/
+        return persona;
     }
 
 }

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Context;
 import android.util.Log;
 import android.view.Window;
 
@@ -16,6 +17,12 @@ import android.widget.TextView;
 import android.view.View;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -48,7 +55,17 @@ public class HomeActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottomNavigation);
 
-        Persona.LetturaPersona();
+
+        //PROVA
+
+        utente.savePersona(this);
+        Persona.readPersona(this,utente.getMatricola()+".txt");
+
+        //FINE PROVA
+
+
+
+
 
         //getSupportFragmentManager().beginTransaction().replace(R.id.conteiner,homeFragment).commit();
 

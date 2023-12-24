@@ -162,6 +162,7 @@ public class RegistrazioneActivity extends AppCompatActivity {
                     }else{
                         utenteNuovo.aggiungiUtente();
                         intent.putExtra("messaggio","Registrazione avvenuta con successo");
+
                     }
                     intent.putExtra("NomeUtente",utenteNuovo.getNome());
                     intent.putExtra("CognomeUtente",utenteNuovo.getCognome());

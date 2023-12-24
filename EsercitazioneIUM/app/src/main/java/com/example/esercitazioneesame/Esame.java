@@ -1,5 +1,7 @@
 package com.example.esercitazioneesame;
 
+import android.util.Log;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,5 +45,19 @@ public class Esame implements Serializable {
                 ", voto=" + voto +
                 ", cfu=" + cfu +
                 '}';
+    }
+
+    public static Esame fromString(String nomeEsame,String voto,String cfu) {
+
+        //Log.d("PROVAA",nomeEsame.substring(nomeEsame.indexOf("=")+1).replace("'","") +" "+voto.substring(voto.indexOf("=")+1)+" "+cfu.substring(cfu.indexOf("=")+1).replace("}",""));
+
+        return new Esame(
+                nomeEsame.substring(nomeEsame.indexOf("=")+1).replace("'",""),
+                Integer.parseInt(voto.substring(voto.indexOf("=")+1)),
+                Integer.parseInt(cfu.substring(cfu.indexOf("=")+1).replace("}",""))
+
+        );
+
+
     }
 }
