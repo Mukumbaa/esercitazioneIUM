@@ -9,6 +9,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+
 public class EliminaAccountActivity extends AppCompatActivity {
 
     private TextView textViewNome, textViewMatricola, textViewDataNascita, textViewNumEsami;
@@ -40,7 +42,12 @@ public class EliminaAccountActivity extends AppCompatActivity {
         buttonEliminaAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Persona.eliminaUtente(utente);
+//                Persona.eliminaUtente(utente);
+
+                File file = new File(getFilesDir(),utente.getMatricola()+".txt");
+
+                file.delete();
+
                 Intent intent = new Intent(EliminaAccountActivity.this, MainActivity.class);
                 startActivity(intent);
                 Toast.makeText(EliminaAccountActivity.this, "Account eliminato", Toast.LENGTH_LONG).show();

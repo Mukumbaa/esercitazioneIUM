@@ -13,6 +13,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 public class ModificaEsameActivity extends AppCompatActivity {
 
     private EditText editTextNomeEsame,editTextVoto,editTextCfu;
@@ -61,6 +65,9 @@ public class ModificaEsameActivity extends AppCompatActivity {
                 );
 
                 utente.modificaEsame(posizioneEsame,e);
+
+                savePersona(utente.getMatricola()+".txt", utente.toString());
+
                 Intent intent = new Intent(ModificaEsameActivity.this, HomeActivity.class);
                 intent.putExtra("fragment","libretto");
                 intent.putExtra("utente",utente);
@@ -78,5 +85,26 @@ public class ModificaEsameActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    public void savePersona(String nomeFile, String sToSave){
+
+        FileOutputStream fos = null;
+        try {
+            fos = openFileOutput(nomeFile,MODE_PRIVATE);
+            fos.write(sToSave.getBytes());
+//            Toast.makeText(this,"Saved to "+getFilesDir()+"/"+nomeFile,Toast.LENGTH_LONG).show();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } finally {
+            if(fos != null){
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
     }
 }

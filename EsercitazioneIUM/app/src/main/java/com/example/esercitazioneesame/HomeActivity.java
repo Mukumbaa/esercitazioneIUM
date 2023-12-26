@@ -58,8 +58,6 @@ public class HomeActivity extends AppCompatActivity {
 
         //PROVA
 
-        utente.savePersona(this);
-        Persona.readPersona(this,utente.getMatricola()+".txt");
 
         //FINE PROVA
 

@@ -8,6 +8,10 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 public class EsameAggiungiActivity extends AppCompatActivity {
 
     private ImageButton buttonAggiungiEsame,buttonIndietro;
@@ -37,6 +41,7 @@ public class EsameAggiungiActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //aggiungo l'esame al libretto dell'utente
                 utente.addEsame(new Esame(editTextNomeEsame.getText().toString(),Integer.parseInt(editTextVoto.getText().toString()),Integer.parseInt(editTextCfu.getText().toString())));
+                savePersona(utente.getMatricola()+".txt", utente.toString());
                 //rivado alla pagina del libretto
                 Intent intent = new Intent(EsameAggiungiActivity.this, HomeActivity.class);
                 //Log.d("AggiungiEsame",utente.getLibretto().get(0).getNomeEsame());
@@ -58,5 +63,26 @@ public class EsameAggiungiActivity extends AppCompatActivity {
         });
 
 
+    }
+    public void savePersona(String nomeFile, String sToSave){
+
+        FileOutputStream fos = null;
+        try {
+            fos = openFileOutput(nomeFile,MODE_PRIVATE);
+            fos.write(sToSave.getBytes());
+//            Toast.makeText(this,"Saved to "+getFilesDir()+"/"+nomeFile,Toast.LENGTH_LONG).show();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } finally {
+            if(fos != null){
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
     }
 }
