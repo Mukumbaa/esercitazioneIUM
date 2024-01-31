@@ -56,15 +56,6 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavigation);
 
 
-        //PROVA
-
-
-        //FINE PROVA
-
-
-
-
-
         //getSupportFragmentManager().beginTransaction().replace(R.id.conteiner,homeFragment).commit();
 
         if(precedenteIntent.getStringExtra("fragment").equals("libretto")){
