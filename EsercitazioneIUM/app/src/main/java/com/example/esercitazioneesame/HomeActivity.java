@@ -62,7 +62,7 @@ public class HomeActivity extends AppCompatActivity {
         Persona.readPersona(this,utente.getMatricola()+".txt");
 
         //FINE PROVA
-
+            
 
 
 

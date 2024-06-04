@@ -44,7 +44,6 @@ public class CustomAdapter extends BaseAdapter {
         return position;
     }
 
-    @SuppressLint("SetTextI18n")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
@@ -89,7 +88,6 @@ public class CustomAdapter extends BaseAdapter {
                 intent.putExtra("posizione",position);
                 Log.d("SIUM","ciao");
                 context.startActivity(intent);
-
                 ((Activity) context).finish();
             }
         });
