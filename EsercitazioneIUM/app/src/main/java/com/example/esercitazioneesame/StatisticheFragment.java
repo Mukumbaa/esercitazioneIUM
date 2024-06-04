@@ -61,6 +61,10 @@ public class StatisticheFragment extends Fragment {
             textViewMedia.setVisibility(View.GONE);
             textViewMediaPonderata.setVisibility(View.GONE);
             textViewVotoLaurea.setVisibility(View.GONE);
+            frameMedia.setVisibility(View.GONE);
+            frameMediaPonderata.setVisibility(View.GONE);
+            frameVotoLaurea.setVisibility(View.GONE);
+
         }else{
             textViewMsgS.setVisibility(View.GONE);
             textViewMedia.setText(String.valueOf(utente.getMedia()));

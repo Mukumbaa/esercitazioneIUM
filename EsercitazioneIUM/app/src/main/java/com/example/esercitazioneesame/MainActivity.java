@@ -23,6 +23,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -38,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
+
 
         editTextMatricola = findViewById(R.id.editTextMatricola);
         editTextPassword = findViewById(R.id.editTextPassword);
@@ -64,6 +73,15 @@ public class MainActivity extends AppCompatActivity {
         ss.setSpan(clickableSpan,20,34, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         registrati.setText(ss);
         registrati.setMovementMethod(LinkMovementMethod.getInstance());
+
+
+        Persona prova = loadPersona("66137.txt");
+
+        if(!prova.getEsistenza()){
+            savePersona("66137.txt","Persona{nome='Gabriele', cognome='Lippolis', dataNascita='06/12/02', matricola='66137', password='password', elencoEsami=[Esame{nome='Algoritmi e strutture dati', voto=25, cfu=9}, Esame{nome='Analisi matematica', voto=27, cfu=9}, Esame{nome='Architettura degli elaboratori', voto=30, cfu=6}, Esame{nome='Fisica e metodo scientifico', voto=25, cfu=6}, Esame{nome='Fondamenti di informatica', voto=25, cfu=6}, Esame{nome='Matematica discreta', voto=28, cfu=9}, Esame{nome='Programmazione 1', voto=26, cfu=12}, Esame{nome='Automi e linguaggi formali', voto=18, cfu=6}, Esame{nome='Colcolo scientifico e metodi numerici', voto=29, cfu=6}, Esame{nome='Dati e modelli', voto=30, cfu=6}, Esame{nome='Elementi di economia e diritto per informatici', voto=21, cfu=6}, Esame{nome='Fondamenti di programmazione web', voto=29, cfu=6}, Esame{nome='Programmazione 2', voto=30, cfu=9}, Esame{nome='Reti di calcolatori', voto=28, cfu=9}, Esame{nome='Sistemi operativi', voto=23, cfu=12}]}");
+        }
+
+
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,11 +116,32 @@ public class MainActivity extends AppCompatActivity {
 
                 if (!emptyFlag){
 
-                    utente = inviaDati();
+
+
+                    Persona p = loadPersona(matricola+".txt");
+
+                    if (p.getEsistenza()){
+                        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                        intent.putExtra("utente",p);
+                        intent.putExtra("fragment","home");
+                        startActivity(intent);
+                        finish();
+                    }else{
+                        editTextMatricola.setHint("Matricola errata");
+                        editTextMatricola.setHintTextColor(getResources().getColor(R.color.errore));
+                        editTextMatricola.clearFocus();
+                        editTextMatricola.setText("");
+
+                        editTextPassword.setHint("Password errata");
+                        editTextPassword.setHintTextColor(getResources().getColor(R.color.errore));
+                        editTextPassword.clearFocus();
+                        editTextPassword.setText("");
+                    }
+
+/*                    utente = inviaDati();
 
                     if (utente.getEsistenza()){
                         Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                        //intent.putExtra("NomeUtente",utente.getNome());
                         if (utente.getNome().equals("Gabriele")){
                             utente.setLibretto(new ArrayList<>(Arrays.asList(
                                     new Esame("Algoritmi e strutture dati",25,9),
@@ -142,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
                             editTextPassword.clearFocus();
                             editTextPassword.setText("");
                         }
-                    }
+                    }*/
                 }
 
 
@@ -194,6 +233,84 @@ public class MainActivity extends AppCompatActivity {
         return Persona.findPersona(matricola,password);
     }
 
+    public Persona loadPersona(String nomeFile){
 
+        FileInputStream fis = null;
+        String sPersona = null;
+
+        try {
+            fis = openFileInput(nomeFile);
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String p;
+
+            while ((p = br.readLine()) != null){
+                sb.append(p).append("\n");
+            }
+
+            sPersona = sb.toString();
+
+//            Toast.makeText(this,sPersona,Toast.LENGTH_LONG).show();
+
+            Persona persona = Persona.fromString(sPersona);
+            // Recupera l'elenco degli esami dalla stringa e crea gli oggetti Esame
+            String esamiString = sPersona.substring(sPersona.indexOf("[") + 1, sPersona.lastIndexOf("]"));
+            if(esamiString.contains(",")){
+                String[] esamiArray = esamiString.split(", ");
+                for (int i = 0;i<esamiArray.length;i+=3){
+                    persona.addEsame(
+                            Esame.fromString(esamiArray[i],esamiArray[i+1],esamiArray[i+2])
+                    );
+                }
+            }
+
+            // Toast.makeText(this,persona.toString(),Toast.LENGTH_LONG).show();
+            return persona;
+
+
+        } catch (FileNotFoundException e) {
+            Toast.makeText(this,"non esiste",Toast.LENGTH_LONG);
+
+            //throw new RuntimeException(e);
+        } catch (IOException e) {
+            Toast.makeText(this,"non esiste",Toast.LENGTH_LONG);
+
+            //throw new RuntimeException(e);
+        }finally {
+            if(fis != null){
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+
+
+        return new Persona("","","","","",false);
+
+    }
+    public void savePersona(String nomeFile, String sToSave){
+
+        FileOutputStream fos = null;
+        try {
+            fos = openFileOutput(nomeFile,MODE_PRIVATE);
+            fos.write(sToSave.getBytes());
+//            Toast.makeText(this,"Saved to "+getFilesDir()+"/"+nomeFile,Toast.LENGTH_LONG).show();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } finally {
+            if(fos != null){
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+    }
 
 }

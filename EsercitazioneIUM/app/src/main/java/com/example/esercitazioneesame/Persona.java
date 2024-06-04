@@ -190,7 +190,7 @@ public class Persona implements Serializable {
 
         return new Persona(nome, cognome, matricola, password, dataNascita, true);
     }
-    public void savePersona(Context context){
+/*    public void savePersona(Context context){
         try {
             String content = this.toString();
             FileOutputStream fos = context.openFileOutput(this.getMatricola()+".txt", Context.MODE_PRIVATE);
@@ -233,15 +233,10 @@ public class Persona implements Serializable {
             );
         }
         Log.d("PROVAA",persona.toString());
-        /*
-Persona{nome='Gabriele',
-cognome='Lippolis',
-dataNascita='06/12/02',
-matricola='66137', password='password',
-elencoEsami=[
-Esame{nome='Algoritmi e strutture dati',voto=25, cfu=9}, Esame{nome='Analisi matematica',voto=27, cfu=9}, Esame{nome='Architettura degli elaboratori', voto=30, cfu=6}, Esame{nome='Fisica e metodo scientifico', voto=25, cfu=6}, Esame{nome='Fondamenti di informatica', voto=25, cfu=6}, Esame{nome='Matematica discreta', voto=28, cfu=9}, Esame{nome='Programmazione 1', voto=26, cfu=12}, Esame{nome='Automi e linguaggi formali', voto=18, cfu=6}, Esame{nome='Colcolo scientifico e metodi numerici', voto=29, cfu=6}, Esame{nome='Dati e modelli', voto=30, cfu=6}, Esame{nome='Elementi di economia e diritto per informatici', voto=21, cfu=6}, Esame{nome='Fondamenti di programmazione web', voto=29, cfu=6}, Esame{nome='Programmazione 2', voto=30, cfu=9}, Esame{nome='Reti di calcolatori', voto=28, cfu=9}, Esame{nome='Sistemi operativi', voto=23, cfu=12}]}
-*/
-        return persona;
-    }
 
+        return persona;
+    }*/
+        /*
+Persona{nome='Gabriele',cognome='Lippolis',dataNascita='06/12/02',matricola='66137', password='password',elencoEsami=[Esame{nome='Algoritmi e strutture dati',voto=25, cfu=9}, Esame{nome='Analisi matematica',voto=27, cfu=9}, Esame{nome='Architettura degli elaboratori', voto=30, cfu=6}, Esame{nome='Fisica e metodo scientifico', voto=25, cfu=6}, Esame{nome='Fondamenti di informatica', voto=25, cfu=6}, Esame{nome='Matematica discreta', voto=28, cfu=9}, Esame{nome='Programmazione 1', voto=26, cfu=12}, Esame{nome='Automi e linguaggi formali', voto=18, cfu=6}, Esame{nome='Colcolo scientifico e metodi numerici', voto=29, cfu=6}, Esame{nome='Dati e modelli', voto=30, cfu=6}, Esame{nome='Elementi di economia e diritto per informatici', voto=21, cfu=6}, Esame{nome='Fondamenti di programmazione web', voto=29, cfu=6}, Esame{nome='Programmazione 2', voto=30, cfu=9}, Esame{nome='Reti di calcolatori', voto=28, cfu=9}, Esame{nome='Sistemi operativi', voto=23, cfu=12}]}
+*/
 }

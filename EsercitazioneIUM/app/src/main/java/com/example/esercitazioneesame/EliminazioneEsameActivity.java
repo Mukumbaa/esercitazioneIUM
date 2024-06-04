@@ -12,6 +12,10 @@ import android.widget.TextView;
 
 import com.google.android.material.badge.BadgeUtils;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 public class EliminazioneEsameActivity extends AppCompatActivity {
     private ImageButton buttonEliminaEsame,buttonIndietro;
 
@@ -44,6 +48,8 @@ public class EliminazioneEsameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 utente.eliminaEsame(posizioneEsame);
+                savePersona(utente.getMatricola()+".txt", utente.toString());
+
                 Intent intent = new Intent(EliminazioneEsameActivity.this, HomeActivity.class);
                 intent.putExtra("fragment","libretto");
                 intent.putExtra("utente",utente);
@@ -63,5 +69,26 @@ public class EliminazioneEsameActivity extends AppCompatActivity {
         });
 
 
+    }
+    public void savePersona(String nomeFile, String sToSave){
+
+        FileOutputStream fos = null;
+        try {
+            fos = openFileOutput(nomeFile,MODE_PRIVATE);
+            fos.write(sToSave.getBytes());
+//            Toast.makeText(this,"Saved to "+getFilesDir()+"/"+nomeFile,Toast.LENGTH_LONG).show();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } finally {
+            if(fos != null){
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
     }
 }

@@ -26,6 +26,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Locale;
 
 public class RegistrazioneActivity extends AppCompatActivity {
@@ -157,12 +161,14 @@ public class RegistrazioneActivity extends AppCompatActivity {
 
                     Intent intent = new Intent(RegistrazioneActivity.this, MessaggioRegistrationeActivity.class);
 
-                    if (utenteNuovo.checkUtenteEsistente()){
+                    File file = new File(getFilesDir(),matricola+".txt");
+//                    if (utenteNuovo.checkUtenteEsistente()){
+                    if (file.exists()){
                         intent.putExtra("messaggio","Utente già registrato");
                     }else{
                         utenteNuovo.aggiungiUtente();
+                        savePersona(utenteNuovo.getMatricola()+".txt",utenteNuovo.toString());
                         intent.putExtra("messaggio","Registrazione avvenuta con successo");
-
                     }
                     intent.putExtra("NomeUtente",utenteNuovo.getNome());
                     intent.putExtra("CognomeUtente",utenteNuovo.getCognome());
@@ -215,6 +221,28 @@ public class RegistrazioneActivity extends AppCompatActivity {
         String myFormat="dd/MM/yy";
         SimpleDateFormat dateFormat=new SimpleDateFormat(myFormat, Locale.ITALY);
         editTextDataNascita.setText(dateFormat.format(myCalendar.getTime()));
+    }
+
+    public void savePersona(String nomeFile, String sToSave){
+
+        FileOutputStream fos = null;
+        try {
+            fos = openFileOutput(nomeFile,MODE_PRIVATE);
+            fos.write(sToSave.getBytes());
+//            Toast.makeText(this,"Saved to "+getFilesDir()+"/"+nomeFile,Toast.LENGTH_LONG).show();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } finally {
+            if(fos != null){
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
     }
 
 }
